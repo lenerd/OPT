@@ -1,0 +1,225 @@
+\documentclass[a4paper]{scrartcl}
+
+% font/encoding packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[ngerman]{babel}
+
+\usepackage{amsmath, amssymb, amsfonts, amsthm, mathtools}
+\setcounter{MaxMatrixCols}{13}
+\allowdisplaybreaks
+\usepackage[output-decimal-marker={,}]{siunitx}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{caption}
+\usepackage{venndiagram}
+\usepackage{enumerate}
+\usepackage{polynom}
+\polyset{style=C, div=:,vars=x}
+\usepackage[section]{placeins}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.5.1}
+\usepgfplotslibrary{fillbetween}
+\usepackage{gauss}
+\usepackage{systeme}
+\usepackage{cancel}
+
+\tikzset{
+    declare function={Floor(\x)=round(\x-0.5);}
+}
+
+% Matrizen
+\newdimen\asep 
+\asep=0.25\baselineskip 
+
+\providecommand{\vo}{ 
+    \text{\raisebox{-\asep}[0pt][0pt]{\rule[0pt]{0.8pt}{3.5\asep}}}} 
+\providecommand{\vu}{ 
+    \text{\raisebox{-0.5\asep}[0pt][0pt]{\rule[0pt]{0.8pt}{\baselineskip}}}} 
+\providecommand{\vm}{ 
+    \text{\raisebox{-\asep}[0pt][0pt]{\rule[0pt]{0.8pt}{\baselineskip}}}}
+
+\newtheorem*{behaupt}{Behauptung}
+
+\newcommand{\fallfac}[2]{{#1}^{\underline{#2}}}
+
+\newcommand{\risefac}[2]{{#1}^{\overline{#2}}}
+
+\newcommand{\dif}{\mathop{}\!\mathrm{d}}
+
+\newcommand{\linf}[1]{\lim_{#1 \to \infty}}
+\newcommand{\gdw}{\Leftrightarrow}
+
+\title{Optimierung}
+\subtitle{Blatt 1 Hausaufgaben}
+\author{
+	Lennart Braun (6523742) \\
+}
+\date{zum 20. Oktober 2014}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}
+    \item % 1.
+        \begin{enumerate}
+            \item Probleme in Standardform
+                \begin{enumerate}[(i)]
+                    \item
+                        \begin{equation}
+                            \begin{gathered}
+                                \text{maximiere } -x_1 + x_2 + x_3 - 2x_4 \\
+                                \text{unter den Nebenbedingungen} \\
+                                \sysdelim..\systeme{%
+                                    7x_1 -x_2 +x_3 \leq 2,
+                                    -5x_2 +x_3 -x_4 \leq 7,
+                                    5x_2 -x_3 +x_4 \geq -7,
+                                    -3x_1 +x_2 +2x_3 -x_4 \leq -3
+                                } \\
+                                x_1, x_2, x_3, x_4 \geq 0
+                            \end{gathered}
+                        \end{equation}
+                        
+                    \item
+                        \begin{equation}
+                            \begin{gathered}
+                                \text{maximiere } x_1 - x_2 - x_3 + 2x_4 \\
+                                \text{unter den Nebenbedingungen} \\
+                                \syssubstitute{a{x_3'}b{x_3''}}
+                                \sysdelim..\systeme[x_1x_2abx_4]{%
+                                    -7x_1 +x_2 -4a +4b \leq  2,
+                                    3x_1 -x_2 -2a +2b +x_4 \leq 3,
+                                    x_2 -2x_4 \leq 7,
+                                    -x_2 +2x_4 \leq -7
+                                } \\
+                                x_1, x_2, x_3', x_3'', x_4 \geq 0
+                            \end{gathered}
+                        \end{equation}
+                \end{enumerate}
+            \item TODO
+                \begin{equation}
+                    \begin{alignedat}{7}
+                        5x_1 -2x_2 &\leq& 10 & \quad \Leftrightarrow & \quad x_2 &\geq& \frac{5}{2}x_1 -5 \\
+                        -2x_1 +2x_2 &\leq& 5 & \quad \Leftrightarrow & \quad x_2 &\leq& x_1 +\frac{5}{2} \\
+                        x_1 +x_2 &\leq& 7 & \quad \Leftrightarrow & \quad x_2 &\leq& -x_1 +7
+                    \end{alignedat}
+                \end{equation}
+                
+                \begin{center}
+                    \begin{tikzpicture}
+                        \begin{axis}[
+                            axis lines=middle,
+                            axis equal,
+                            xlabel=$x_1$,
+                            ylabel=$x_2$,
+                            %y label style={at={(0.35,1)}},
+                            width=1.0\textwidth,
+                            xmin = 0, xmax = 4,
+                            ymin = 0, ymax = 8,
+                            x axis line style={name path=xaxis}
+                        ]
+                            \addplot
+                            [name path=a, samples=200,]
+                            {-5+5/2*x};
+                            \addplot
+                            [name path=b, samples=200,]
+                            {5/2+x};
+                            \addplot
+                            [name path=c, samples=200,]
+                            {7-x};
+                            \addplot[gray!50] fill between[of=b and xaxis, soft clip={domain=0:2+0.01}];
+                            \addplot[gray!50] fill between[of=a and b, soft clip={domain=2-0.01:9/4+0.01}];
+                            \addplot[gray!50] fill between[of=a and c, soft clip={domain=9/4-0.01:24/7}];
+                            \addplot
+                            [name path=d1, samples=200, style=dashed]
+                            {15/3-5/3*x};
+                            \addplot
+                            [name path=d2, samples=200, style=dashed]
+                            {195/7/3-5/3*x};
+                            % \addplot
+                            % [->, name path=d3, samples=200, color=red, style=dashed]
+                            % {53/35+3/5*x};
+                            \addplot[mark=*] coordinates {(24/7,25/7)};
+                        \end{axis}
+                    \end{tikzpicture}
+                \end{center}
+                Das Maximum ist bei $x_1 = \frac{24}{7}$ und $x_2 = \frac{25}{7}$ erreicht.
+        \end{enumerate}
+
+    \item % 2.
+        \begin{enumerate}
+            \item
+                \begin{equation}
+                    \begin{gathered}
+                        \text{minimiere }
+                        67W +120K +100H +90F +97B +124N +98S +62M \\
+                        \text{unter den Nebenbedingungen} \\
+                        \sysdelim..\systeme[WKHFBNSM]{%
+                            8W +25K +30H +22F +3B +8N +6S \geq 75,
+                            1W +35K +8H +1F +33N +13S +98M \geq 90,
+                            54W +42B +4N +63S \geq 300,
+                            S \leq 80
+                        } \\
+                        W, K, H, F, B, N, S, M \geq 0
+                    \end{gathered}
+                \end{equation}
+                in Standardform
+                \begin{equation}
+                    \begin{gathered}
+                        \text{maximiere }
+                        -67W -120K -100H -90F -97B -124N -98S -62M \\
+                        \text{unter den Nebenbedingungen} \\
+                        \sysdelim..\systeme[WKHFBNSM]{%
+                            -8W -25K -30H -22F -3B -8N -6S \leq -75,
+                            -1W -35K -8H -1F -33N -13S -98M \leq -90,
+                            -54W -42B -4N -63S \leq -300,
+                            S \leq 80
+                        } \\
+                        W, K, H, F, B, N, S, M \geq 0
+                    \end{gathered}
+                \end{equation}
+            \item
+                \begin{equation}
+                    \begin{gathered}
+                        \text{minimiere }
+                        21T +16K +371S +346M +884O \\
+                        \text{unter den Nebenbedingungen} \\
+                        \syssubstitute{.,}
+                        \sysdelim..\systeme[TKSMO]{%
+                            0.85T +1.62K +12.78S +8.39M \geq 15,
+                            0.33T +0.2K +1.58S +1.39M +100O \geq 2,
+                            0.33T +0.2K +1.58S +1.39M +100O \leq 6,
+                            4.64T +2.37K +74.69S +80.7M \geq 4,
+                            9T +8K +7S +508.2M \leq 100,
+                            -T +K +S -M -O \leq 0
+                        } \\
+                        T, K, S, M, O \geq 0
+                    \end{gathered}
+                \end{equation}
+                in Standardform
+                \begin{equation}
+                    \begin{gathered}
+                        \text{maximiere }
+                        -21T -16K -371S -346M -884O \\
+                        \text{unter den Nebenbedingungen} \\
+                        \syssubstitute{.,}
+                        \sysdelim..\systeme[TKSMO]{%
+                            -0.85T -1.62K -12.78S -8.39M \leq -15,
+                            -0.33T -0.2K -1.58S -1.39M -100O \leq -2,
+                            0.33T +0.2K +1.58S +1.39M +100O \leq 6,
+                            -4.64T -2.37K -74.69S -80.7M \leq -4,
+                            9T +8K +7S +508.2M \leq 100,
+                            -T +K +S -M -O \leq 0
+                        } \\
+                        T, K, S, M, O \geq 0
+                    \end{gathered}
+                \end{equation}
+        \end{enumerate}
+
+\end{enumerate}
+
+
+\end{document}
