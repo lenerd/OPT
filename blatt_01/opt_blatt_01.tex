@@ -20,6 +20,7 @@
 \usepackage[section]{placeins}
 \usepackage{tikz}
 \usetikzlibrary{arrows}
+\usetikzlibrary{arrows.meta}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.5.1}
 \usepgfplotslibrary{fillbetween}
@@ -139,9 +140,9 @@
                             \addplot
                             [name path=d2, samples=200, style=dashed]
                             {195/7/3-5/3*x};
-                            % \addplot
-                            % [->, name path=d3, samples=200, color=red, style=dashed]
-                            % {53/35+3/5*x};
+                            \addplot
+                            [->, > = {Latex[scale=1.5]}, name path=d3, samples=200, domain=2.7:4.5]
+                            {3/5*x-1};
                             \addplot[mark=*] coordinates {(24/7,25/7)};
                         \end{axis}
                     \end{tikzpicture}
