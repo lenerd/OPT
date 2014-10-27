@@ -1,0 +1,198 @@
+\documentclass[a4paper]{scrartcl}
+
+% font/encoding packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[ngerman]{babel}
+
+\usepackage{amsmath, amssymb, amsfonts, amsthm, mathtools}
+\setcounter{MaxMatrixCols}{13}
+\allowdisplaybreaks
+\usepackage[output-decimal-marker={,}]{siunitx}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{caption}
+\usepackage{venndiagram}
+\usepackage{enumerate}
+\usepackage{polynom}
+\polyset{style=C, div=:,vars=x}
+\usepackage[section]{placeins}
+\usepackage{tikz}
+\usetikzlibrary{tikzmark}
+\usetikzlibrary{calc}
+\usetikzlibrary{arrows}
+\usetikzlibrary{arrows.meta}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.5.1}
+\usepgfplotslibrary{fillbetween}
+\usepackage{gauss}
+\usepackage{systeme}
+\usepackage{cancel}
+
+\tikzset{
+    declare function={Floor(\x)=round(\x-0.5);}
+}
+
+% Matrizen
+\newdimen\asep 
+\asep=0.25\baselineskip 
+
+\providecommand{\vo}{ 
+    \text{\raisebox{-\asep}[0pt][0pt]{\rule[0pt]{0.8pt}{3.5\asep}}}} 
+\providecommand{\vu}{ 
+    \text{\raisebox{-0.5\asep}[0pt][0pt]{\rule[0pt]{0.8pt}{\baselineskip}}}} 
+\providecommand{\vm}{ 
+    \text{\raisebox{-\asep}[0pt][0pt]{\rule[0pt]{0.8pt}{\baselineskip}}}}
+
+\newtheorem*{behaupt}{Behauptung}
+
+\newcommand{\fallfac}[2]{{#1}^{\underline{#2}}}
+
+\newcommand{\risefac}[2]{{#1}^{\overline{#2}}}
+
+\newcommand{\dif}{\mathop{}\!\mathrm{d}}
+
+\newcommand{\linf}[1]{\lim_{#1 \to \infty}}
+\newcommand{\gdw}{\Leftrightarrow}
+
+\renewcommand{\arraystretch}{1.3}
+
+\title{Optimierung}
+\subtitle{Blatt 2 Hausaufgaben}
+\author{
+	Lennart Braun (6523742) \\
+}
+\date{zum 27. Oktober 2014}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}
+    \item % 1.
+                \begin{enumerate}
+                    \item
+                        Starttableau
+                        \begin{equation}
+                            \begin{array}{rcrrrr}
+                                x_4 & = & 7 & -x_1 & -3x_2 & -2x_3 \\
+                                x_5 & = & 4 & -x_1 & -2x_2 &  -x_3 \\
+                                x_6 & = & 5 &      & -3x_2 & -2x_3 \\
+                                \hline
+                                z   & = &   & 2x_1 & +4x_2 & +3x_3 \\
+                            \end{array}
+                        \end{equation}
+                        Eingangsvariable: $x_2$ \\
+                        Ausgangsvariable: $x_6$ \\
+
+                        1. Iteration
+                        \begin{equation}
+                            \begin{array}{rcrrrr}
+                                x_2 & = & \frac{5}{3} & & -\frac{2}{3}x_3 & -\frac{1}{3}x_6 \\
+                                x_4 & = & 2 & -x_1 & & x_6 \\
+                                x_5 & = & \frac{2}{3} & -x_1 & +\frac{1}{3}x_3 & +\frac{2}{3}x_6 \\
+                                \hline
+                                z   & = & \frac{20}{3} & +2x_1 & +\frac{1}{3}x_3 & -\frac{4}{3}x_6 \\
+                            \end{array}
+                        \end{equation}
+                        Eingangsvariable: $x_1$ \\
+                        Ausgangsvariable: $x_5$
+
+                        2. Iteration
+                        \begin{equation}
+                            \begin{array}{rcrrrr}
+                                x_1 & = & \frac{2}{3} & +\frac{1}{3}x_3 & +\frac{2}{3}x_6 & -x_5 \\
+                                x_2 & = & \frac{5}{3} & -\frac{2}{3}x_3 & -\frac{1}{3}x_6 & \\
+                                x_4 & = & \frac{4}{3} & -\frac{1}{3}x_3 & +\frac{1}{3}x_6 & +x_5 \\
+                                \hline
+                                z   & = & 8 & +x_3 & & -2x_5 \\
+                            \end{array}
+                        \end{equation}
+                        Eingangsvariable: $x_3$ \\
+                        Ausgangsvariable: $x_2$
+
+                        3. Iteration
+                        \begin{equation}
+                            \begin{array}{rcrrrr}
+                                x_3 & = & \frac{5}{2} & -\frac{1}{2}x_6 & & -\frac{3}{2}x_2 \\
+                                x_1 & = & \frac{3}{2} & +\frac{1}{2}x_6 & -x_5 & -\frac{1}{2}x_2 \\
+                                x_4 & = & \frac{1}{2} & +\frac{1}{2}x_6 & +x_5 & +\frac{1}{2}x_2 \\
+                                \hline
+                                z   & = & \frac{21}{2} & -\frac{1}{2}x_6 & -2x_5 & -\frac{3}{2}x_2 \\
+                            \end{array}
+                        \end{equation}
+                        Optimale Lösung:
+                        \begin{equation}
+                            \begin{split}
+                                x_1 &= \frac{3}{2} \\
+                                x_2 &= 0 \\
+                                x_3 &= \frac{5}{2} \\
+                                x_4 &= \frac{1}{2} \\
+                                x_5 &= 0 \\
+                                x_6 &= 0 \\
+                                z   &= \num{10,5}
+                            \end{split}
+                        \end{equation}
+                        
+                    \item
+                        Starttableau
+                        \begin{equation}
+                            \begin{array}{rcrrrr}
+                                x_4 & = & 4 & -3x_1 & -3x_2 & +x_3 \\
+                                x_5 & = & 6 & -5x_1 & -3x_2 & -x_3 \\
+                                x_6 & = & 2 &  +x_1 & -3x_2 & -x_3 \\
+                                x_7 & = & 2 & -3x_1 & +4x_2 & +x_3 \\
+                                \hline
+                                z   & = &   & 9x_1 & -5x_2 & -4x_3 \\
+                            \end{array}
+                        \end{equation}
+                        Eingangsvariable: $x_1$ \\
+                        Ausgangsvariable: $x_7$ \\
+
+                        1. Iteration
+                        \begin{equation}
+                            \begin{array}{rcrrrr}
+                                x_1 & = & \frac{2}{3} & +\frac{4}{3}x_2 & +\frac{1}{3}x_3 & -\frac{1}{3}x_7 \\
+                                x_4 & = & 2 & -7x_2 &  & +x_7 \\
+                                x_5 & = & \frac{8}{3} & -\frac{29}{3}x_2 & -\frac{8}{3}x_3 & +\frac{5}{3}x_7 \\
+                                x_6 & = & \frac{8}{3} & -\frac{5}{3}x_2 & -\frac{2}{3}x_3 & -\frac{1}{3}x_7 \\
+                                \hline
+                                z   & = & 6 & +7x_2 & -x_3 & -3x_7 \\
+                            \end{array}
+                        \end{equation}
+                        Eingangsvariable: $x_2$ \\
+                        Ausgangsvariable: $x_5$ \\
+
+                        2. Iteration
+                        \begin{equation}
+                            \begin{array}{rcrrrr}
+                                x_2 & = & \frac{8}{29} & -\frac{8}{29}x_3 & +\frac{5}{29}x_7 & -\frac{3}{29}x_5 \\
+                                x_1 & = & \frac{30}{29} & -\frac{1}{29}x_3 & -\frac{3}{29}x_7 & -\frac{4}{29}x_5 \\
+                                x_4 & = & \frac{2}{29} & +\frac{56}{29}x_3 & -\frac{6}{29}x_7 & +\frac{21}{29}x_5 \\
+                                x_6 & = & \frac{64}{29} & -\frac{6}{29}x_3 & -\frac{18}{29}x_7 & +\frac{5}{29}x_5 \\
+                                \hline
+                                z   & = & \frac{230}{29} & -\frac{85}{29}x_3 & -\frac{52}{29}x_7 & -\frac{21}{29}x_5 \\
+                            \end{array}
+                        \end{equation}
+                        Optimale Lösung:
+                        \begin{equation}
+                            \begin{split}
+                                x_1 &= \frac{30}{29} \\
+                                x_2 &= \frac{8}{29} \\
+                                x_3 &= 0 \\
+                                x_4 &= \frac{2}{29} \\
+                                x_5 &= 0 \\
+                                x_6 &= \frac{64}{29} \\
+                                x_7 &= 0 \\
+                                z   &= \frac{230}{29} \approx \num{7,93}
+                            \end{split}
+                        \end{equation}
+
+                \end{enumerate}
+
+    \item % 2.
+
+\end{enumerate}
+
+
+\end{document}
