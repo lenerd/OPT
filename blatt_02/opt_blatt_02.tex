@@ -192,6 +192,64 @@
         \end{enumerate}
 
     \item % 2.
+        Starttableau
+        \begin{equation}
+            \begin{array}{rcrrrrr}
+                x_5 & = & 4 & -x_1 & -3x_2 & -x_3 & -x_4 \\
+                x_6 & = & 1 & -x_1 & +7x_2 & +3x_3 & +x_4 \\
+                \hline
+                z   & = &   & 4x_1 & -13x_2 & -9x_3 & +x_4 \\
+            \end{array}
+        \end{equation}
+        Eingangsvariable: $x_1$ \\
+        Ausgangsvariable: $x_6$ \\
+
+        1. Iteration
+        \begin{equation}
+            \begin{array}{rcrrrrr}
+                x_1 & = & 1 & +7x_2 & +3x_3 & +x_4 & -x_6 \\
+                x_5 & = & 3 & -10x_2 & -4x_3 & -2x_4 & +x_6 \\
+                \hline
+                z   & = & 4 & +15x_2 & +3x_3 & +5x_4 & -4x_6 \\
+            \end{array}
+        \end{equation}
+        Eingangsvariable: $x_2$ \\
+        Ausgangsvariable: $x_5$ \\
+
+        2. Iteration
+        \begin{equation}
+            \begin{array}{rcrrrrr}
+                x_2 & = & \frac{3}{10} & -\frac{2}{5}x_3 & -\frac{1}{5}x_4 & +\frac{1}{10}x_6 & -\frac{1}{10}x_5 \\
+                x_1 & = & \frac{31}{10} & +\frac{1}{5}x_3 & -\frac{2}{5}x_4 & -\frac{3}{10}x_6 & -\frac{7}{10}x_5 \\
+                \hline
+                z   & = & \frac{17}{2} & -3x_3 & +2x_4 & -\frac{5}{2}x_6 & -\frac{3}{2}x_5 \\
+            \end{array}
+        \end{equation}
+        Eingangsvariable: $x_4$ \\
+        Ausgangsvariable: $x_2$ \\
+
+        3. Iteration
+        \begin{equation}
+            \begin{array}{rcrrrrr}
+                x_4 & = & \frac{3}{2} & -2x_3 & +\frac{1}{2}x_6 & -\frac{1}{2}x_5 & -5x_2 \\
+                x_1 & = & \frac{5}{2} & +x_3 & -\frac{1}{2}x_6 & -\frac{1}{2}x_5 & +2x_2 \\
+                \hline
+                z   & = & \frac{23}{2} & -7x_3 & -\frac{3}{2}x_6 & -\frac{5}{2}x_5 & -10x_2 \\
+            \end{array}
+        \end{equation}
+                Optimale Lösung:
+                \begin{equation}
+                    \begin{split}
+                        x_1 &= \frac{5}{2} \\
+                        x_2 &= 0 \\
+                        x_3 &= 0 \\
+                        x_4 &= \frac{3}{2} \\
+                        x_5 &= 0 \\
+                        x_6 &= 0 \\
+                        z   &= \frac{23}{2} = \num{11,5}
+                    \end{split}
+                \end{equation}
+
 
 \end{enumerate}
 
