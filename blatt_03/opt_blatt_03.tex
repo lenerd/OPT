@@ -1,0 +1,218 @@
+\documentclass[a4paper]{scrartcl}
+
+% font/encoding packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[ngerman]{babel}
+
+\usepackage{amsmath, amssymb, amsfonts, amsthm, mathtools}
+\setcounter{MaxMatrixCols}{13}
+\allowdisplaybreaks
+\usepackage[output-decimal-marker={,}]{siunitx}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{caption}
+\usepackage{venndiagram}
+\usepackage{enumerate}
+\usepackage{polynom}
+\polyset{style=C, div=:,vars=x}
+\usepackage[section]{placeins}
+\usepackage{tikz}
+\usetikzlibrary{tikzmark}
+\usetikzlibrary{calc}
+\usetikzlibrary{arrows}
+\usetikzlibrary{arrows.meta}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.5.1}
+\usepgfplotslibrary{fillbetween}
+\usepackage{gauss}
+\usepackage{systeme}
+\usepackage{cancel}
+
+\tikzset{
+    declare function={Floor(\x)=round(\x-0.5);}
+}
+
+% Matrizen
+\newdimen\asep 
+\asep=0.25\baselineskip 
+
+\providecommand{\vo}{ 
+    \text{\raisebox{-\asep}[0pt][0pt]{\rule[0pt]{0.8pt}{3.5\asep}}}} 
+\providecommand{\vu}{ 
+    \text{\raisebox{-0.5\asep}[0pt][0pt]{\rule[0pt]{0.8pt}{\baselineskip}}}} 
+\providecommand{\vm}{ 
+    \text{\raisebox{-\asep}[0pt][0pt]{\rule[0pt]{0.8pt}{\baselineskip}}}}
+
+\newtheorem*{behaupt}{Behauptung}
+
+\newcommand{\fallfac}[2]{{#1}^{\underline{#2}}}
+
+\newcommand{\risefac}[2]{{#1}^{\overline{#2}}}
+
+\newcommand{\dif}{\mathop{}\!\mathrm{d}}
+
+\newcommand{\linf}[1]{\lim_{#1 \to \infty}}
+\newcommand{\gdw}{\Leftrightarrow}
+
+\renewcommand{\arraystretch}{1.3}
+
+\title{Optimierung}
+\subtitle{Blatt 3 Hausaufgaben}
+\author{
+	Lennart Braun (6523742, Gruppe 6) \\
+    Alexander Timmermann (6524072, Gruppe 5)
+}
+\date{zum 23. Oktober 2014}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}
+    \item % 1.
+        \begin{enumerate}
+            \item
+                Starttableau
+                \begin{equation}
+                    \begin{array}{rcrrr}
+                        x_3 & = & \frac{1}{2} & -x_1 & +3x_2 \\
+                        x_4 & = & 3 & -x_1 & +x_2 \\
+                        x_5 & = & 1 & +2x_1 & -\frac{1}{3}x_2 \\
+                        \hline
+                        z   & = &   & x_1 & +4x_2 \\
+                    \end{array}
+                \end{equation}
+                Eingangsvariable: $x_2$ \\
+                Ausgangsvariable: $x_5$ \\
+
+                1. Iteration
+                \begin{equation}
+                    \begin{array}{rcrrr}
+                        x_2 & = & 3 & +6x_1 & -3x_5 \\
+                        x_3 & = & \frac{19}{2} & +17x_1 & -9x_5 \\
+                        x_4 & = & 6 & +5x_1 & -3x_5 \\
+                        \hline
+                        z   & = & 12 & +25x_1 & -12x_5 \\
+                    \end{array}
+                \end{equation}
+                Das LP-Problem ist unbeschränkt, da $x_1$ unbegrenzt erhöht
+                werden kann.
+
+                Lösung:
+                \begin{equation}
+                    \begin{split}
+                        x_1 &= t \quad \text{mit } t \in \mathbb{R}, t \geq 0 \\
+                        x_2 &= 6t + 3 \\
+                        x_3 &= 17t + \frac{19}{2} \\
+                        x_4 &= 5t + 6 \\
+                        x_5 &= 0 \\
+                        z   &= 25t + 12
+                    \end{split}
+                \end{equation}
+                Lösung als Halbgerade $g$ des $\mathbb{R}^2$ in Parameterform:
+                \begin{equation}
+                    g\colon
+                    \begin{pmatrix}
+                        x_1 \\ x_2
+                    \end{pmatrix}
+                    =
+                    \begin{pmatrix}
+                        1 \\ 6
+                    \end{pmatrix}
+                    \cdot t +
+                    \begin{pmatrix}
+                        0 \\ 3
+                    \end{pmatrix}
+                \end{equation}
+
+            \item
+                \begin{center}
+                    \begin{tikzpicture}
+                        \begin{axis}[
+                            axis lines=middle,
+                            axis equal,
+                            xlabel=$x_1$,
+                            ylabel=$x_2$,
+                            width=1.0\textwidth,
+                            xmin = 0, xmax = 10,
+                            ymin = 0, ymax = 10,
+                            x axis line style={name path=xaxis}
+                        ]
+                            \addplot
+                            [name path=a, samples=200, domain=0:10]
+                            {1/3*x -1/6};
+                            \addplot
+                            [name path=b, samples=200, domain=0:10]
+                            {x-3};
+                            \addplot
+                            [name path=c, samples=200, domain=0:10]
+                            {6*x+3};
+                            \addplot
+                            [name path=h, samples=200, domain=0:10, color=white]
+                            {10};
+                            \node at (axis cs:0.7,9) {$g$};
+                            \addplot[gray!50] fill between[of=c and xaxis, soft clip={domain=0:0.5+0.01}];
+                            \addplot[gray!50] fill between[of=c and a, soft clip={domain=0.5-0.01:7/6+0.01}];
+                            \addplot[gray!50] fill between[of=h and a, soft clip={domain=7/6-0.01:4.25+0.01}];
+                            \addplot[gray!50] fill between[of=h and b, soft clip={domain=4.25-0.01:10}];
+                        \end{axis}
+                    \end{tikzpicture}
+                \end{center}
+                Würde man die graphische Methode anwenden, so könnte man die
+                Gerade, welche sich aus der Zielfunktion ergibt, beliebig weit
+                verschieben, ohne dass eine optimale Lösung gefunden wird.
+
+            \item
+                \begin{equation}
+                    \begin{gathered}
+                        \begin{split}
+                            z &= 50 \\
+                            \gdw 25t + 12 &= 50 \\
+                            \gdw 25t &= 38 \\
+                            \gdw t &= \frac{38}{25} \\
+                        \end{split} \\
+                        \Rightarrow \left( \frac{38}{25}, \frac{303}{25} \right)
+                    \end{gathered}
+                \end{equation}
+
+                \begin{equation}
+                    \begin{gathered}
+                        \begin{split}
+                            z &= 200 \\
+                            \gdw 25t + 12 &= 200 \\
+                            \gdw 25t &= 188 \\
+                            \gdw t &= \frac{188}{25} \\
+                        \end{split} \\
+                        \Rightarrow \left( \frac{188}{25}, \frac{1203}{25} \right)
+                    \end{gathered}
+                \end{equation}
+
+                \begin{equation}
+                    \begin{gathered}
+                        \begin{split}
+                            z &= 1000 \\
+                            \gdw 25t + 12 &= 1000 \\
+                            \gdw 25t &= 988 \\
+                            \gdw t &= \frac{988}{25} \\
+                        \end{split} \\
+                        \Rightarrow \left( \frac{988}{25}, \frac{6003}{25} \right)
+                    \end{gathered}
+                \end{equation}
+                
+
+        \end{enumerate}
+
+    \item % 2.
+        \begin{enumerate}
+            \item
+
+            \item
+
+        \end{enumerate}
+
+
+\end{enumerate}
+
+
+\end{document}
