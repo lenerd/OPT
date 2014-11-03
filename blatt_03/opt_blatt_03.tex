@@ -214,10 +214,97 @@
                         \begin{array}{rrcr}
                             -x_1 & +x_2  & \leq & 9 \\
                             8x_1 & -2x_2 & \leq & 3 \\
-                            -x_1 & -x_2  & \leq & -2 \\
-                            & x_1, x_2, & \geq & 0
-                        \end{array}
+                            -x_1 & -x_2  & \leq & -2
+                        \end{array} \\
+                        x_1, x_2 \geq 0
                     \end{gathered}
+                \end{equation}
+                Hilfsproblem
+                \begin{equation}
+                    \begin{gathered}
+                        \text{maximiere }
+                        -x_0 \\
+                        \text{unter den Nebenbedingungen} \\
+                        \begin{array}{rrrcr}
+                            -x_1 & +x_2 & -x_0 & \leq 9 \\
+                            8x_1 & -2x_2 & -x_0 & \leq 3 \\
+                            -x_1 & -x_2 & -x_0 & \leq -2
+                        \end{array} \\
+                        x_0, x_1, x_2 \geq 0
+                    \end{gathered}
+                \end{equation}
+                
+                unzulässiges Tableau des Hilfsproblems
+                \begin{equation}
+                    \begin{array}{rcrrrr}
+                        x_3 & = & 9 & +x_1 & -x_2 & +x_0 \\
+                        x_4 & = & 3 & -8x_1 & +2x_2 & +x_0 \\
+                        x_5 & = & -2 & +x_1 & +x_2 & +x_0 \\
+                        \hline
+                        w   & = & & & & -x_0
+                    \end{array}
+                \end{equation}
+                Eingangsvariable: $x_0$ \\
+                Ausgangsvariable: $x_5$ \\
+
+                Starttableau des Hilfsproblems
+                \begin{equation}
+                    \begin{array}{rcrrrr}
+                        x_0 & = & 2 & -x_1 & -x_2 & +x_5 \\
+                        x_3 & = & 11 &  & -2x_2 & +x_5 \\
+                        x_4 & = & 5 & -9x_1 & +x_2 & +x_5 \\
+                        \hline
+                        w   & = & -2 & +x_1 & +x_2 & -x_5
+                    \end{array}
+                \end{equation}
+                Eingangsvariable: $x_1$ \\
+                Ausgangsvariable: $x_4$ \\
+
+                1. Iteration
+                \begin{equation}
+                    \begin{array}{rcrrrr}
+                        x_1 & = & \frac{5}{9} & +\frac{1}{9}x_2 & +\frac{1}{9}x_5 & -\frac{1}{9}x_4 \\
+                        x_0 & = & \frac{13}{9} & -\frac{10}{9}x_2 & +\frac{8}{9}x_5 & +\frac{1}{9}x_4 \\
+                        x_3 & = & 11 & -2x_2 & +x_5 &  \\
+                        \hline
+                        w   & = & -\frac{13}{9} & +\frac{10}{9}x_2 & -\frac{8}{9}x_5 & -\frac{1}{9}x_4 
+                    \end{array}
+                \end{equation}
+                Eingangsvariable: $x_2$ \\
+                Ausgangsvariable: $x_0$ \\
+
+                2. Iteration
+                \begin{equation}
+                    \begin{array}{rcrrrr}
+                        x_2 & = & \frac{13}{10} & +\frac{4}{5}x_5 & +\frac{1}{10}x_4 & -\frac{9}{10}x_0 \\
+                        x_1 & = & \frac{7}{10} & +\frac{11}{5}x_5 & +\frac{1}{10}x_4 & -\frac{1}{10}x_0 \\
+                        x_3 & = & \frac{42}{5} & -\frac{3}{5}x_5 & -\frac{1}{5}x_4 & +\frac{9}{5}x_0 \\
+                        \hline
+                        w   & = &  &  &  & -x_0 
+                    \end{array}
+                \end{equation}
+                Optimale Lösung:
+                \begin{equation}
+                    \begin{split}
+                        x_1 &= \frac{7}{10} \\
+                        x_2 &= \frac{13}{10} \\
+                        x_3 &= \frac{42}{5} \\
+                        x_4 &= 0 \\
+                        x_5 &= 0 \\
+                        x_0 &= 0 \\
+                        w   &= 0
+                    \end{split}
+                \end{equation}
+
+                Starttableau für die 2. Phase
+                \begin{equation}
+                    \begin{array}{rcrrrr}
+                        x_2 & = & \frac{13}{10} & +\frac{4}{5}x_5 & +\frac{1}{10}x_4 \\
+                        x_1 & = & \frac{7}{10} & +\frac{11}{5}x_5 & +\frac{1}{10}x_4 \\
+                        x_3 & = & \frac{42}{5} & -\frac{3}{5}x_5 & -\frac{1}{5}x_4 \\
+                        \hline
+                        z   & = & \frac{89}{5} & +\frac{49}{5}x_5 & +\frac{3}{5}x_4
+                    \end{array}
                 \end{equation}
 
             \item
