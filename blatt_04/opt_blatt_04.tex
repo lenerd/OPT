@@ -230,6 +230,73 @@
             \item
                 \begin{enumerate}[(i)]
                     \item
+                        Starttableau
+                        \begin{equation}
+                            \begin{array}{rcrrr}
+                                x_3 & = & 10 & -5x_1 & -x_2 \\
+                                \hline
+                                z   & = &   & 3x_1 & +x_2 \\
+                            \end{array}
+                        \end{equation}
+
+                        \begin{enumerate}
+                            \item Regel vom größten Koeffizienten
+
+                                Eingangsvariable: $x_1$ \\
+                                Ausgangsvariable: $x_3$
+
+                                1. Iteration
+                                \begin{equation}
+                                    \begin{array}{rcrrr}
+                                        x_1 & = & 2 & -\frac{1}{5}x_2 & -\frac{1}{5}x_3 \\
+                                        \hline
+                                        z   & = & 6 & +\frac{2}{5}x_2 & -\frac{3}{5}x_3 \\
+                                    \end{array}
+                                \end{equation}
+
+                                Eingangsvariable: $x_2$ \\
+                                Ausgangsvariable: $x_1$
+
+                                2. Iteration
+                                \begin{equation}
+                                    \begin{array}{rcrrr}
+                                        x_2 & = & 10 & -x_3 & -5x_1 \\
+                                        \hline
+                                        z   & = & 10 & -x_3 & -2x_1 \\
+                                    \end{array}
+                                \end{equation}
+
+                                Optimale Lösung
+                                \begin{align*}
+                                    x_1 &= 0 \\
+                                    x_2 &= 10 \\
+                                    x_3 &= 0 \\
+                                    z   &= 10
+                                \end{align*}
+
+                            \item Regel vom größten Zuwachs
+
+                                Eingangsvariable: $x_2$ \\
+                                Ausgangsvariable: $x_3$
+
+                                1. Iteration
+                                \begin{equation}
+                                    \begin{array}{rcrrr}
+                                        x_2 & = & 10 & -5x_1 & -x_3  \\
+                                        \hline                    
+                                        z   & = & 10 & -2x_1 & -x_3  \\
+                                    \end{array}
+                                \end{equation}
+
+                                Optimale Lösung
+                                \begin{align*}
+                                    x_1 &= 0 \\
+                                    x_2 &= 10 \\
+                                    x_3 &= 0 \\
+                                    z   &= 10
+                                \end{align*}
+
+                        \end{enumerate}
 
                     \item
                         \begin{center}
@@ -261,8 +328,8 @@
 
                         Durchlaufen der Ecken mit der Regel vom größten
                         \begin{itemize}
-                            \item Koeffizienten: TODO
-                            \item Zuwachs: TODO
+                            \item Koeffizienten: $(P, Q, R)$
+                            \item Zuwachs: $(P, R)$
                         \end{itemize}
 
                 \end{enumerate}
