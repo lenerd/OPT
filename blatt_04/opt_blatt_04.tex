@@ -73,60 +73,162 @@
     \item % 1.
         \begin{enumerate}
             \item
-                Starttableau
-                \begin{equation}
-                    \begin{array}{rcrrr}
-                        x_3 & = & 10 & -x_1 & -x_2 \\
-                        x_4 & = & 8 & -x_1 &  \\
-                        x_5 & = & 3 &  & -x_2 \\
-                        \hline
-                        z   & = &   & 2x_1 & +3x_2 \\
-                    \end{array}
-                \end{equation}
-
                 \begin{enumerate}[(i)]
-                    \item Regel vom größten Koeffizienten
-
-                        Eingangsvariable: $x_2$ \\
-                        Ausgangsvariable: $x_5$
-
-                        1. Iteration
+                    \item
+                        Starttableau
                         \begin{equation}
                             \begin{array}{rcrrr}
-                                x_2 & = & 3 &  & -x_5 \\
-                                x_3 & = & 7 & -x_1 & +x_5 \\
+                                x_3 & = & 10 & -x_1 & -x_2 \\
                                 x_4 & = & 8 & -x_1 &  \\
+                                x_5 & = & 3 &  & -x_2 \\
                                 \hline
-                                z   & = & 9 & +2x_1 & -3x_5 \\
+                                z   & = &   & 2x_1 & +3x_2 \\
                             \end{array}
                         \end{equation}
 
-                        Eingangsvariable: $x_1$ \\
-                        Ausgangsvariable: $x_3$
+                        \begin{enumerate}
+                            \item Regel vom größten Koeffizienten
 
-                        2. Iteration
-                        \begin{equation}
-                            \begin{array}{rcrrr}
-                                x_1 & = & 7 & +x_5 & -x_3 \\
-                                x_2 & = & 3 & -x_5 &  \\
-                                x_4 & = & 1 & -x_5 & +x_3 \\
-                                \hline
-                                z   & = & 23 & -x_5 & -2x_3 \\
-                            \end{array}
-                        \end{equation}
+                                Eingangsvariable: $x_2$ \\
+                                Ausgangsvariable: $x_5$
 
-                        Optimale Lösung
-                        \begin{align*}
-                            x_1 &= 7 \\
-                            x_2 &= 3 \\
-                            x_3 &= 0 \\
-                            x_4 &= 1 \\
-                            x_5 &= 0 \\
-                            Z   &= 23
-                        \end{align*}
+                                1. Iteration
+                                \begin{equation}
+                                    \begin{array}{rcrrr}
+                                        x_2 & = & 3 &  & -x_5 \\
+                                        x_3 & = & 7 & -x_1 & +x_5 \\
+                                        x_4 & = & 8 & -x_1 &  \\
+                                        \hline
+                                        z   & = & 9 & +2x_1 & -3x_5 \\
+                                    \end{array}
+                                \end{equation}
 
-                    \item Regel vom größten Zuwachs
+                                Eingangsvariable: $x_1$ \\
+                                Ausgangsvariable: $x_3$
 
+                                2. Iteration
+                                \begin{equation}
+                                    \begin{array}{rcrrr}
+                                        x_1 & = & 7 & +x_5 & -x_3 \\
+                                        x_2 & = & 3 & -x_5 &  \\
+                                        x_4 & = & 1 & -x_5 & +x_3 \\
+                                        \hline
+                                        z   & = & 23 & -x_5 & -2x_3 \\
+                                    \end{array}
+                                \end{equation}
+
+                                Optimale Lösung
+                                \begin{align*}
+                                    x_1 &= 7 \\
+                                    x_2 &= 3 \\
+                                    x_3 &= 0 \\
+                                    x_4 &= 1 \\
+                                    x_5 &= 0 \\
+                                    z   &= 23
+                                \end{align*}
+
+                            \item Regel vom größten Zuwachs
+
+                                Eingangsvariable: $x_1$ \\
+                                Ausgangsvariable: $x_4$
+
+                                1. Iteration
+                                \begin{equation}
+                                    \begin{array}{rcrrr}
+                                        x_1 & = & 8 &  & -x_4 \\
+                                        x_3 & = & 2 & -x_2 & +x_4 \\
+                                        x_5 & = & 3 & -x_2 &  \\
+                                        \hline
+                                        z   & = & 16 & +3x_2 & -2x_4 \\
+                                    \end{array}
+                                \end{equation}
+
+                                Eingangsvariable: $x_2$ \\
+                                Ausgangsvariable: $x_3$
+
+                                2. Iteration
+                                \begin{equation}
+                                    \begin{array}{rcrrr}
+                                        x_2 & = & 2 & +x_4 & -x_3 \\
+                                        x_1 & = & 8 & -x_4 &  \\
+                                        x_5 & = & 1 & -x_4 & -x_3 \\
+                                        \hline
+                                        z   & = & 22 & +x_4 & -3x_3 \\
+                                    \end{array}
+                                \end{equation}
+
+                                Eingangsvariable: $x_4$ \\
+                                Ausgangsvariable: $x_5$
+
+                                3. Iteration
+                                \begin{equation}
+                                    \begin{array}{rcrrr}
+                                        x_4 & = & 1 & -x_3 & -x_5 \\
+                                        x_2 & = & 3 & -2x_3 & -x_5 \\
+                                        x_1 & = & 7 & +x_3 & +x_5 \\
+                                        \hline
+                                        z   & = & 23 & -3x_3 & -x_5 \\
+                                    \end{array}
+                                \end{equation}
+
+                                Optimale Lösung
+                                \begin{align*}
+                                    x_1 &= 7 \\
+                                    x_2 &= 3 \\
+                                    x_3 &= 0 \\
+                                    x_4 &= 1 \\
+                                    x_5 &= 0 \\
+                                    z   &= 23
+                                \end{align*}
+
+                        \end{enumerate}
+
+                    \item
+                        \begin{center}
+                            \begin{tikzpicture}
+                                \begin{axis}[
+                                    axis lines=middle,
+                                    axis equal,
+                                    xlabel=$x_1$,
+                                    ylabel=$x_2$,
+                                    width=1.0\textwidth,
+                                    xmin = 0, xmax = 10,
+                                    ymin = 0, ymax = 10,
+                                    x axis line style={name path=xaxis}
+                                ]
+                                    \addplot
+                                    [name path=a, samples=200, domain=0:10]
+                                    {-x+10};
+                                    \draw ({axis cs:8,0}|-{rel axis cs:0,0})
+                                        -- ({axis cs:8,0}|-{rel axis cs:0,1});
+                                    \addplot
+                                    [name path=b, samples=200, domain=0:10]
+                                    {3};
+                                    \addplot
+                                    [dashed, name path=z, samples=200, domain=0:10]
+                                    {-2/3*x + 23/3};
+                                    \node at (axis cs:0.3,0.3) {$P$};
+                                    \node at (axis cs:7.7,0.3) {$Q$};
+                                    \node at (axis cs:7.7,1.8) {$R$};
+                                    \node at (axis cs:6.8,2.7) {$S$};
+                                    \node at (axis cs:0.3,2.7) {$T$};
+                                    \node at (axis cs:3,5) {$z = 23$};
+                                    %\addplot
+                                    %[name path=h, samples=200, domain=0:10, color=white]
+                                    %{10};
+                                    %\node at (axis cs:0.7,9) {$g$};
+                                    \addplot[gray!50] fill between[of=b and xaxis, soft clip={domain=0:7+0.01}];
+                                    \addplot[gray!50] fill between[of=a and xaxis, soft clip={domain=7-0.01:8}];
+                                \end{axis}
+                            \end{tikzpicture}
+                        \end{center}
+
+                        Durchlaufen der Ecken mit der Regel vom größten
+                        \begin{itemize}
+                            \item Koeffizienten: $(P, T, S)$
+                            \item Zuwachs: $(P, Q, R, S)$
+                        \end{itemize}
+                        
                 \end{enumerate}
 
             \item
