@@ -232,6 +232,38 @@
                     \item
 
                     \item
+                        \begin{center}
+                            \begin{tikzpicture}
+                                \begin{axis}[
+                                    axis lines=middle,
+                                    %axis equal,
+                                    xlabel=$x_1$,
+                                    ylabel=$x_2$,
+                                    width=1.0\textwidth,
+                                    xmin = 0, xmax = 4,
+                                    ymin = 0, ymax = 12,
+                                    x axis line style={name path=xaxis}
+                                ]
+                                    \addplot
+                                    [name path=a, samples=200, domain=0:10]
+                                    {-5*x+10};
+                                    \addplot
+                                    [dashed, name path=z, samples=200, domain=0:10]
+                                    {-3*x+10};
+                                    \node at (axis cs:0.1,0.3) {$P$};
+                                    \node at (axis cs:1.8,0.3) {$Q$};
+                                    \node at (axis cs:0.1,8.7) {$R$};
+                                    \node at (axis cs:2,5) {$z = 10$};
+                                    \addplot[gray!50] fill between[of=a and xaxis, soft clip={domain=0:2}];
+                                \end{axis}
+                            \end{tikzpicture}
+                        \end{center}
+
+                        Durchlaufen der Ecken mit der Regel vom größten
+                        \begin{itemize}
+                            \item Koeffizienten: TODO
+                            \item Zuwachs: TODO
+                        \end{itemize}
 
                 \end{enumerate}
         \end{enumerate}
