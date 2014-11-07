@@ -73,10 +73,59 @@
     \item % 1.
         \begin{enumerate}
             \item
-                \begin{enumerate}[(i)]
-                    \item
+                Starttableau
+                \begin{equation}
+                    \begin{array}{rcrrr}
+                        x_3 & = & 10 & -x_1 & -x_2 \\
+                        x_4 & = & 8 & -x_1 &  \\
+                        x_5 & = & 3 &  & -x_2 \\
+                        \hline
+                        z   & = &   & 2x_1 & +3x_2 \\
+                    \end{array}
+                \end{equation}
 
-                    \item
+                \begin{enumerate}[(i)]
+                    \item Regel vom größten Koeffizienten
+
+                        Eingangsvariable: $x_2$ \\
+                        Ausgangsvariable: $x_5$
+
+                        1. Iteration
+                        \begin{equation}
+                            \begin{array}{rcrrr}
+                                x_2 & = & 3 &  & -x_5 \\
+                                x_3 & = & 7 & -x_1 & +x_5 \\
+                                x_4 & = & 8 & -x_1 &  \\
+                                \hline
+                                z   & = & 9 & +2x_1 & -3x_5 \\
+                            \end{array}
+                        \end{equation}
+
+                        Eingangsvariable: $x_1$ \\
+                        Ausgangsvariable: $x_3$
+
+                        2. Iteration
+                        \begin{equation}
+                            \begin{array}{rcrrr}
+                                x_1 & = & 7 & +x_5 & -x_3 \\
+                                x_2 & = & 3 & -x_5 &  \\
+                                x_4 & = & 1 & -x_5 & +x_3 \\
+                                \hline
+                                z   & = & 23 & -x_5 & -2x_3 \\
+                            \end{array}
+                        \end{equation}
+
+                        Optimale Lösung
+                        \begin{align*}
+                            x_1 &= 7 \\
+                            x_2 &= 3 \\
+                            x_3 &= 0 \\
+                            x_4 &= 1 \\
+                            x_5 &= 0 \\
+                            Z   &= 23
+                        \end{align*}
+
+                    \item Regel vom größten Zuwachs
 
                 \end{enumerate}
 
