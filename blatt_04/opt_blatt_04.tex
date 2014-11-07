@@ -336,7 +336,112 @@
         \end{enumerate}
 
     \item % 2.
+        Starttableau
+        \begin{equation}
+            \begin{array}{rcrrrr}
+                x_4 & = & 2 &  & -x_2 &  \\
+                x_5 & = & 6 & -2x_1 & -3x_2 & + 12x_3\\
+                x_6 & = & 4 & +x_1 & -2x_2 & -9x_3 \\
+                \hline
+                z   & = &   & 2x_1 & +8x_2 & -3x_3 \\
+            \end{array}
+        \end{equation}
 
+        Basislösung:
+        \begin{alignat*}{2}
+            x_1 &= 0 &\quad x_4 &= 2 \\
+            x_2 &= 0 &\quad x_5 &= 6 \\
+            x_3 &= 0 &\quad x_6 &= 4 \\
+            z &= 0
+        \end{alignat*}
+
+        Eingangsvariable: $x_2$ \\
+        Ausgangsvariable: $x_4$
+
+        1. Iteration
+        \begin{equation}
+            \begin{array}{rcrrrr}
+                x_2 & = & 2 &  &  & -x_4 \\
+                x_5 & = &   & -2x_1 & + 12x_3 & +3x_4 \\
+                x_6 & = &   & x_1 & -9x_3 & +2x_4 \\
+                \hline
+                z   & = & 16 & 2x_1 & -3x_3 & -8x_4 \\
+            \end{array}
+        \end{equation}
+
+        Basislösung (degeneriert):
+        \begin{alignat*}{2}
+            x_1 &= 0 &\quad x_4 &= 0 \\
+            x_2 &= 2 &\quad x_5 &= 0 \\
+            x_3 &= 0 &\quad x_6 &= 0 \\
+            z &= 16
+        \end{alignat*}
+
+        Eingangsvariable: $x_1$ \\
+        Ausgangsvariable: $x_5$
+
+        2. Iteration (degeneriert)
+        \begin{equation}
+            \begin{array}{rcrrrr}
+                x_1 & = &   & 16x_3 & +\frac{3}{2}x_4 & -\frac{1}{2}x_5 \\
+                x_2 & = & 2 &  & -x_4 & \\
+                x_6 & = &   & -3x_3 & +\frac{7}{2}x_4 & -\frac{1}{2}x_5 \\
+                \hline
+                z   & = & 16 & +9x_3 & -5x_4 & -x_5\\
+            \end{array}
+        \end{equation}
+
+        Basislösung (degeneriert):
+        \begin{alignat*}{2}
+            x_1 &= 0 &\quad x_4 &= 0 \\
+            x_2 &= 2 &\quad x_5 &= 0 \\
+            x_3 &= 0 &\quad x_6 &= 0 \\
+            z &= 16
+        \end{alignat*}
+
+        Eingangsvariable: $x_3$ \\
+        Ausgangsvariable: $x_6$
+
+        3. Iteration (degeneriert)
+        \begin{equation}
+            \begin{array}{rcrrrr}
+                x_3 & = &   & \frac{7}{6}x_4 & -\frac{1}{6}x_5 & -\frac{1}{3}x_6 \\
+                x_1 & = &   & \frac{17}{2}x_4 & -\frac{3}{2}x_5 & -2x_6 \\
+                x_2 & = & 2 & -x_4 & & \\
+                \hline
+                z   & = & 16 & +\frac{11}{2}x_4 & -\frac{5}{2}x_5 & -3x_6\\
+            \end{array}
+        \end{equation}
+
+        Basislösung (degeneriert):
+        \begin{alignat*}{2}
+            x_1 &= 0 &\quad x_4 &= 0 \\
+            x_2 &= 2 &\quad x_5 &= 0 \\
+            x_3 &= 0 &\quad x_6 &= 0 \\
+            z &= 16
+        \end{alignat*}
+
+        Eingangsvariable: $x_4$ \\
+        Ausgangsvariable: $x_2$
+
+        4. Iteration
+        \begin{equation}
+            \begin{array}{rcrrrr}
+                x_4 & = & 2 & & & -x_2 \\
+                x_3 & = & \frac{7}{3} & -\frac{1}{6}x_5 & -\frac{1}{3}x_6 & -\frac{7}{6}x_2 \\
+                x_1 & = & 17 & -\frac{3}{2}x_5 & -2x_6 & -\frac{17}{2}x_2 \\
+                \hline
+                z   & = & 27 & -\frac{5}{2}x_5 & -3x_6 & -\frac{11}{2}x_2\\
+            \end{array}
+        \end{equation}
+
+        Optimale Lösung:
+        \begin{alignat*}{2}
+            x_1 &= 17 &\quad x_4 &= 2 \\
+            x_2 &= 0 &\quad x_5 &= 0 \\
+            x_3 &= \frac{7}{3} &\quad x_6 &= 0 \\
+            z &= 27
+        \end{alignat*}
 
 
 \end{enumerate}
