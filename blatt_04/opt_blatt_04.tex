@@ -14,7 +14,7 @@
 \usepackage{subcaption}
 \usepackage{caption}
 \usepackage{venndiagram}
-\usepackage{enumerate}
+\usepackage[shortlabels]{enumitem}
 \usepackage{polynom}
 \polyset{style=C, div=:,vars=x}
 \usepackage[section]{placeins}
@@ -69,7 +69,7 @@
 \begin{document}
 \maketitle
 
-\begin{enumerate}
+\begin{enumerate}[label=\bfseries\arabic*.]
     \item % 1.
         \begin{enumerate}
             \item
