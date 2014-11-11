@@ -9,6 +9,7 @@
 \usepackage[top=1.5cm,bottom=2cm,left=1.5cm,right=1.5cm]{geometry}
 
 \usepackage{amsmath, amssymb, amsfonts, amsthm, mathtools}
+\usepackage{marvosym}
 \setcounter{MaxMatrixCols}{13}
 \allowdisplaybreaks
 \usepackage[output-decimal-marker={,}]{siunitx}
@@ -156,9 +157,38 @@
 
     \item % 2.
         \begin{enumerate}
-            \item
+            \item Sei $g$ der Gewinn in Euro.
+                \begin{equation}
+                    g = 6A_1 +6B_1 +10C_1 +14A_2 +15B_2 +16C_2 +9A_3 +11B_3 +13C_3
+                \end{equation}
+                Für den angegebenen Produktionsplan beträgt der Gewinn
+                \begin{equation}
+                    \begin{split}
+                        g &= 6 \cdot 145 +6 \cdot 25 +10 \cdot 80 +14 \cdot 35 +15 \cdot 35 +16 \cdot 140 +9 \cdot 20 +11 \cdot 55 +13 \cdot 20 \\
+                        &= 6120 \text{\,\EUR.}
+                    \end{split}
+                \end{equation}
 
             \item
+                \begin{equation}
+                    \begin{gathered}
+                        \text{maximiere} \\
+                        6A_1 +14A_2 +9A_3 +6B_1 +15B_2 +11B_3 +10C_1 +16C_2 +13C_3 \\
+                        \text{unter den Nebenbedingungen} \\
+                        \begin{array}{rrrrrrrrrcr}
+                            A_1 & +A_2 & +A_3 & & & & & & &  \leq & 200 \\
+                            -A_1 & -A_2 & -A_3 & & & & & & & \leq & -200 \\
+                            & & & B_1 & +B_2 & +B_3 & & & &  \leq & 115 \\
+                            & & & -B_1 & -B_2 & -B_3 & & & & \leq & -115 \\
+                            & & & & & & C_1 & +C_2 & +C_3 &  \leq & 240 \\
+                            & & & & & & -C_1 & -C_2 & -C_3 & \leq & -240 \\
+                            & A_2 & & & +B_2 & & & +C_2 & &  \leq & 210 \\
+                            & & A_3 & & & +B_3 & & & +C_3 &  \leq & 125 \\
+                        \end{array} \\
+                        A_1, A_2, A_3, B_1, B_2, B_3, C_1, C_2, C_3 \geq 0
+                    \end{gathered}
+                \end{equation}
+                
 
         \end{enumerate}
 
