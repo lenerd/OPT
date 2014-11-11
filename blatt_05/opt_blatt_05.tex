@@ -6,6 +6,8 @@
 \usepackage{lmodern}
 \usepackage[ngerman]{babel}
 
+\usepackage[top=1.5cm,bottom=2cm,left=1.5cm,right=1.5cm]{geometry}
+
 \usepackage{amsmath, amssymb, amsfonts, amsthm, mathtools}
 \setcounter{MaxMatrixCols}{13}
 \allowdisplaybreaks
@@ -73,6 +75,37 @@
     \item % 1.
         \begin{enumerate}
             \item
+                \begin{equation}
+                    \begin{gathered}
+                        \text{maximiere } x_{01} +x_{02} +x_{03} +x_{04} \\
+                        \text{unter den Nebenbedingungen} \\
+                        \begin{array}{rrrrrrrrrrrrrrcr}
+                            % x_{01} & x_{02} & x_{03} & x_{04} & x_{16} & x_{21} & x_{25} & x_{26} & x_{34} & x_{35} & x_{47} & x_{57} & x_{65} & x_{67} \\
+                            x_{01} &  &  &  & -x_{16} & +x_{21} &  &  &  &  &  &  &  &  & = & 0 \\
+                            & x_{02} &  &  &  & -x_{21} & -x_{25} & -x_{26} &  &  &  &  &  &  & = & 0 \\
+                            &  & x_{03} &  &  &  &  &  & -x_{34} & -x_{35} &  &  &  &  & = & 0 \\
+                            &  &  & x_{04} &  &  &  &  & +x_{34} &  & -x_{47} &  &  &  & = & 0 \\
+                            &  &  &  &  &  & x_{25} &  &  & +x_{35} &  & -x_{57} & +x_{65} &  & = & 0 \\
+                            &  &  &  & x_{16} &  &  & +x_{26} &  &  &  &  & -x_{65} & -x_{67} & = & 0 \\
+                        \end{array} \\
+                        \begin{array}{rcrcr}
+                            0 & \leq & x_{01} & \leq & 7 \\
+                            0 & \leq & x_{02} & \leq & 1 \\
+                            0 & \leq & x_{03} & \leq & 3 \\
+                            0 & \leq & x_{04} & \leq & 2 \\
+                            0 & \leq & x_{16} & \leq & 3 \\
+                            0 & \leq & x_{21} & \leq & 4 \\
+                            0 & \leq & x_{25} & \leq & 5 \\
+                            0 & \leq & x_{26} & \leq & 2 \\
+                            0 & \leq & x_{34} & \leq & 5 \\
+                            0 & \leq & x_{35} & \leq & 4 \\
+                            0 & \leq & x_{47} & \leq & 5 \\
+                            0 & \leq & x_{57} & \leq & 2 \\
+                            0 & \leq & x_{65} & \leq & 8 \\
+                            0 & \leq & x_{67} & \leq & 3
+                        \end{array}
+                    \end{gathered}
+                \end{equation}
 
             \item
 
