@@ -108,6 +108,37 @@
                 \end{equation}
 
             \item
+                \begin{equation}
+                    \begin{gathered}
+                        \text{minimiere} \\
+                        5x_{01} +4x_{02} +3x_{03} +3x_{05} +x_{06} +6x_{12} +3x_{16} +7x_{23} +5x_{24} +5x_{35} +3x_{45} +4x_{46} +2x_{56} \\
+                        \text{unter den Nebenbedingungen} \\
+                        \begin{array}{rrrrrrrrrrrrrcr}
+                            % x_{01} & x_{02} & x_{03} & x_{05} & x_{06} & x_{12} & x_{16} & x_{23} & x_{24} & x_{35} & x_{45} & x_{46} & x_{56} \\
+                            x_{01} & +x_{02} & +x_{03} & +x_{05} & +x_{06} & & & & & & & & & = & 6 \\
+                            x_{01} & & & & & -x_{12} & -x_{16} & & & & & & & = & 0 \\
+                             & x_{02} & & & & +x_{12} & & -x_{23} & -x_{24} & & & & & = & 0 \\
+                             & & x_{03} & & & & & +x_{23} & & -x_{35} & & & & = & 0 \\
+                             & & & & & & & & x_{24} & & -x_{45} & -x_{46} & & = & 0 \\
+                             & & & x_{05} & & & & & & +x_{35} & +x_{45} & & -x_{56} & = & 0
+                        \end{array} \\
+                        \begin{array}{rcrcr}
+                            0 & \leq & x_{01} & \leq & 3 \\
+                            0 & \leq & x_{02} & \leq & 4 \\
+                            0 & \leq & x_{03} & \leq & 5 \\
+                            0 & \leq & x_{05} & \leq & 4 \\
+                            0 & \leq & x_{06} & \leq & 3 \\
+                            0 & \leq & x_{12} & \leq & 6 \\
+                            0 & \leq & x_{16} & \leq & 1 \\
+                            0 & \leq & x_{23} & \leq & 1 \\
+                            0 & \leq & x_{24} & \leq & 4 \\
+                            0 & \leq & x_{35} & \leq & 2 \\
+                            0 & \leq & x_{45} & \leq & 1 \\
+                            0 & \leq & x_{46} & \leq & 7 \\
+                            0 & \leq & x_{56} & \leq & 4
+                        \end{array}
+                    \end{gathered}
+                \end{equation}
 
             \item
 
