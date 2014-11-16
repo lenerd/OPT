@@ -6,7 +6,7 @@
 \usepackage{lmodern}
 \usepackage[ngerman]{babel}
 
-\usepackage[top=1.5cm,bottom=2cm,left=1.5cm,right=1.5cm]{geometry}
+\usepackage[top=2.5cm,bottom=3cm,left=1.5cm,right=1.5cm]{geometry}
 
 \usepackage{amsmath, amssymb, amsfonts, amsthm, mathtools}
 \usepackage{marvosym}
@@ -75,7 +75,8 @@
 \begin{enumerate}[label=\bfseries\arabic*.]
     \item % 1.
         \begin{enumerate}
-            \item
+            \item Die Aufgabe, einen Flusses maximaler Stärke zu finden, als
+                LP-Problem.
                 \begin{equation}
                     \begin{gathered}
                         \text{maximiere } x_{01} +x_{02} +x_{03} +x_{04} \\
@@ -108,7 +109,8 @@
                     \end{gathered}
                 \end{equation}
 
-            \item
+            \item Die Aufgabe, einen kostenminimalen Fluss der Stärke 6 zu
+                finden, als LP-Problem.
                 \begin{equation}
                     \begin{gathered}
                         \text{minimiere} \\
@@ -159,12 +161,13 @@
         \begin{enumerate}
             \item Sei $g$ der Gewinn in Euro.
                 \begin{equation}
-                    g = 6A_1 +6B_1 +10C_1 +14A_2 +15B_2 +16C_2 +9A_3 +11B_3 +13C_3
+                    g = 6A_1 +14A_2 +9A_3 +6B_1 +15B_2 +11B_3 +10C_1 +16C_2 +13C_3
                 \end{equation}
                 Für den angegebenen Produktionsplan beträgt der Gewinn
                 \begin{equation}
                     \begin{split}
-                        g &= 6 \cdot 145 +6 \cdot 25 +10 \cdot 80 +14 \cdot 35 +15 \cdot 35 +16 \cdot 140 +9 \cdot 20 +11 \cdot 55 +13 \cdot 20 \\
+                        g &= 6 \cdot 145 + 14 \cdot 35 + 9 \cdot 20 + 6 \cdot 25
+                            + 15 \cdot 35 + 11 \cdot 55 + 10 \cdot 80 + 16 \cdot 140 + 13 \cdot 20 \\
                         &= 6120 \text{\,\EUR.}
                     \end{split}
                 \end{equation}
