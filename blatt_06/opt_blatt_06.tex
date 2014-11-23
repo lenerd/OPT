@@ -162,7 +162,61 @@
         \end{enumerate}
 
     \item % 2.
+        $(D)$
+        \begin{equation}
+            \begin{gathered}
+                \text{minimiere } -y_1 +y_2 +6y_3 +6y_4 -3y_5 +6y_6 \\
+                \text{unter den Nebenbedingungen} \\
+                \begin{array}{rrrrrrcr}
+                    -3y_1 & +y_2 & -2y_3 & +9y_4 & -5y_5 & +7y_6 & \geq & -1 \\
+                    y_1 & -y_2 & +7y_3 & -4y_4 & +2y_5 & -3y_6 & \geq & -2 \\
+                \end{array} \\
+                y_1, y_2, y_3, y_4, y_5, y_6 \geq 0
+            \end{gathered}
+        \end{equation}
 
+        $(\tilde D)$
+        \begin{equation}
+            \begin{gathered}
+                \text{maximiere } y_1 -y_2 -6y_3 -6y_4 +3y_5 -6y_6 \\
+                \text{unter den Nebenbedingungen} \\
+                \begin{array}{rrrrrrcr}
+                    3y_1 & -y_2 & +2y_3 & -9y_4 & +5y_5 & -7y_6 & \leq & 1 \\
+                    -y_1 & +y_2 & -7y_3 & +4y_4 & -2y_5 & +3y_6 & \leq & 2 \\
+                \end{array} \\
+                y_1, y_2, y_3, y_4, y_5, y_6 \geq 0
+            \end{gathered}
+        \end{equation}
+
+        Starttableau
+        \begin{equation}
+            \begin{array}{rcrrrrrrr}
+                y_7 & = & 1 & -3y_1 & +y_2 & -2y_3 & +9y_4 & -5y_5 & +7y_6 \\
+                y_8 & = & 2 & +y_1 & -y_2 & +7y_3 & -4y_4 & +2y_5 & -3y_6 \\
+                \hline
+                z & = & & y_1 & -y_2 & -6y_3 & -6y_4 & +3y_5 & -6y_6
+            \end{array}
+        \end{equation}
+
+        1. Iteration \\
+        Eingangsvariable: $y_5$ \\
+        Ausgangsvariable: $y_7$
+        \begin{equation}
+            \begin{array}{rcrrrrrrr}
+                y_5 & = & \frac{1}{5} & -\frac{3}{5}y_1 & +\frac{1}{5}y_2 & -\frac{2}{5}y_3 & +\frac{9}{5}y_4 & +\frac{7}{5}y_6 & -\frac{1}{5}x_7 \\
+                y_8 & = & \frac{12}{5} & -\frac{1}{5}y_1 & -\frac{3}{5}y_2 & +\frac{31}{5}y_3 & -\frac{2}{5}y_4 & -\frac{1}{5}y_6 & -\frac{2}{5}y_7 \\
+                \hline
+                z & = & \frac{3}{5} & -\frac{4}{5}y_1 & -\frac{2}{5}y_2 & -\frac{36}{5}y_3 & -\frac{3}{5}y_4 & -\frac{15}{5}y_6 & -\frac{3}{5}y_7
+            \end{array}
+        \end{equation}
+        Optimale Lösung für $(\tilde D)$ \\
+        \begin{equation}
+            y^* = \left( 0, 0, 0, 0, \frac{1}{5}, 0, 0, \frac{12}{5} \right)
+        \end{equation}
+        Optimale Lösung für $(P)$ \\
+        \begin{equation}
+            x^* = \left( \frac{3}{5}, 0 \right)
+        \end{equation}
 
 \end{enumerate}
 
