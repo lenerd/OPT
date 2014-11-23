@@ -76,21 +76,77 @@
     \item % 1.
         \begin{enumerate}
             \item
-                \begin{enumerate}
-                    \item
+                \begin{enumerate}[(i)]
+                    \item $(D)$
+                        \begin{equation}
+                            \begin{gathered}
+                                \text{minimiere } 4y_1 +6y_2 +2y_3 +2y_4 \\
+                                \text{unter den Nebenbedingungen} \\
+                                \begin{array}{rrrrcr}
+                                    3y_1 & +5y_2 & -y_3 & +3y_4 & \geq & 9 \\
+                                    3y_1 & +3y_2 & +3y_3 & -4y_4 & \geq & -5 \\
+                                    -y_1 & +y_2 & +y_3 & -y_4 & \geq & -4 \\
+                                \end{array} \\
+                                y_1, y_2, y_3, y_4 \geq 0
+                            \end{gathered}
+                        \end{equation}
 
                     \item
+                        Eine optimale Lösung für $(D)$ ist
+                        \begin{equation}
+                            y^* = \left( y_1^*, y_2^*, y_3^*, y_4^* \right)
+                            = \left( 0, \frac{21}{29}, 0, \frac{52}{29}  \right)
+                        \end{equation}
+                        
+                    \item
+                        Alle $y_i^*$ sind $\geq 0$.
+                        \begin{align}
+                            5 \cdot \frac{21}{29} + 3 \cdot \frac{52}{29} = \frac{261}{29} &\geq \frac{261}{29} = 9 \\
+                            3 \cdot \frac{21}{29} - 4 \cdot \frac{52}{29} = -\frac{145}{29} &\geq -\frac{145}{29} = -5 \\
+                            \frac{21}{29} -\frac{52}{29} = -\frac{31}{29} &\geq -\frac{116}{29} = -4
+                        \end{align}
+                        
+                    \item
+                        \begin{equation}
+                            \sum_{j=1}^3 c_jx_j^* = 9 \cdot \frac{30}{29} - 5 \cdot \frac{8}{29} = \frac{230}{29} = 6 \cdot \frac{21}{29} + 2 \cdot \frac{52}{29} = \sum_{i=1}^4 b_iy_i^*
+                        \end{equation}
 
                     \item
+                        \begin{enumerate}
+                            \item
+                                \begin{itemize}
+                                    \item $\sum_{i=1}^4 a_{i1}y_i^* = c_1$ (siehe (iii))
 
-                    \item
+                                    \item $\sum_{i=1}^4 a_{i2}y_i^* = c_2$ (siehe (iii))
 
-                    \item
+                                    \item $x_3^* = 0$
+
+                                \end{itemize}
+
+                            \item
+                                \begin{itemize}
+                                    \item $y_1^* = 0$
+
+                                    \item $\sum_{j=1}^3 a_{2j}x_j^* = b_2$ \\
+                                        \begin{equation}
+                                            5 \cdot x_1^* + 3 \cdot x_2^* + x_3^* = \frac{150}{29} + \frac{24}{29} = \frac{174}{29} = 6
+                                        \end{equation}
+                                        
+                                    \item $y_3^* = 0$
+
+                                    \item $\sum_{j=1}^3 a_{4j}x_j^* = b_4$ (siehe (iii))
+                                        \begin{equation}
+                                            3 \cdot x_1^* - 4 \cdot x_2^* - x_3^* = \frac{90}{29} - \frac{32}{29} = \frac{58}{29} = 2
+                                        \end{equation}
+                                        
+                                \end{itemize}
+                        \end{enumerate}
+                        
 
                 \end{enumerate}
 
             \item
-                \begin{enumerate}
+                \begin{enumerate}[(i)]
                     \item
 
                     \item
