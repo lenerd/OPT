@@ -75,7 +75,62 @@
 \begin{enumerate}[label=\bfseries\arabic*.]
     \item % 1.
         \begin{enumerate}
-            \item
+            \item $(D)$
+                \begin{equation}
+                    \begin{gathered}
+                        \text{minimiere }
+                        12x_1 + 11x_2 + 7x_3 + 5x_4 \\
+                        \text{unter den Nebenbedingungen} \\
+                        \begin{array}{rrrcr}
+                            y_1 & + 4y_2 & +2y_3 & \geq & 12 \\
+                            3y_1 & +2y_2 & +y_3 & \geq & 11 \\
+                            2y_1 & +y_2 & +5y_3 & \geq & 7 \\
+                            5y_1 & -2y_2 & +4y_3 & \geq & 5
+                        \end{array} \\
+                        y_1, y_2, y_3 \geq 0
+                    \end{gathered}
+                \end{equation}
+
+                Da $x_1^* = x_3^* = 0$ muss Gleichheit nur zweite die zweite und
+                die vierte Zeile von $(D)$ gelten werden.
+
+                $x^*$ in $(P)$
+                \begin{equation}
+                    \begin{split}
+                        \frac{12}{3} + \frac{10}{3} &= \frac{22}{3} \\
+                        \frac{8}{3} - \frac{4}{3} &= \frac{4}{3} \\
+                        \frac{4}{3} + \frac{8}{3} = \frac{12}{3} &< \frac{13}{3}
+                    \end{split}
+                \end{equation}
+
+                Aus der dritten Zeile folgt, dass $y_3^* = 0$ sein muss.
+
+                Wir erhalten folgendes Gleichungssystem.
+                \begin{equation}
+                    \begin{array}{rrrcr}
+                        3y_1 & +2y_2 & = & 11 \\
+                        5y_1 & -2y_2 & = & 5
+                    \end{array} \\
+                    \label{eq:lgs}
+                \end{equation}
+
+                Daraus folgt.
+                \begin{equation}
+                    y^* = \left( 2, 2.5, 0 \right)
+                \end{equation}
+                
+                $y^*$ in \eqref{eq:lgs}
+                \begin{equation}
+                    \begin{split}
+                        2 + 10 &= 12 \\
+                        6 + 5 &= 11 \\
+                        4 + 2.5 = 6.5 &\neq 7 \\
+                        10 - 5 &= 5
+                    \end{split}
+                \end{equation}
+                
+                Offensichtlich erfüllt $y^*$ das Gleichungssystem nicht.
+                Daher ist $x^*$ keine optimale Lösung.
 
             \item
 
