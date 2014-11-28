@@ -117,20 +117,70 @@
                     y^* = \left( 2, 2.5, 0 \right)
                 \end{equation}
                 
-                $y^*$ in \eqref{eq:lgs}
+                $y^*$ in $(D)$
                 \begin{equation}
                     \begin{split}
-                        2 + 10 &= 12 \\
-                        6 + 5 &= 11 \\
-                        4 + 2.5 = 6.5 &\neq 7 \\
-                        10 - 5 &= 5
+                        2 + 10 &\geq 12 \\
+                        6 + 5 &\geq 11 \\
+                        4 + 2.5 = 6.5 &< 7 \lightning \\
+                        10 - 5 &\geq 5
                     \end{split}
                 \end{equation}
                 
                 Offensichtlich erfüllt $y^*$ das Gleichungssystem nicht.
                 Daher ist $x^*$ keine optimale Lösung.
 
-            \item
+            \item $(D)$
+                \begin{equation}
+                    \begin{gathered}
+                        \text{minimiere }
+                        5y_1 +2y_2 +2y_3 \\
+                        \text{unter den Nebenbedingungen} \\
+                        \begin{array}{rrrcr}
+                            2y_1 & -y_2 &  & \geq & 1 \\
+                             & 3y_2 & +y_3 & \geq & 6 \\
+                            y_1 & -2y_2 & -y_3 & \geq & -4
+                        \end{array} \\
+                        y_1, y_2, y_3 \geq 0
+                    \end{gathered}
+                \end{equation}
+
+                Da $x_3^* = 0$ muss Gleichheit nur für die erste und zweite
+                Zeile von $(D)$ gelten.
+
+                $x^*$ in $(P)$
+                \begin{equation}
+                    \begin{split}
+                        \frac{10}{2} &= 5 \\
+                        -\frac{5}{2} +\frac{9}{2} &= 2 \\
+                        \frac{3}{2} &\neq 2
+                    \end{split}
+                \end{equation}
+                Aus der dritten Zeile folgt, dass $y_3^* = 0$ sein muss.
+                
+                Wir erhalten folgendes Gleichungssystem.
+                \begin{equation}
+                    \begin{array}{rrrcr}
+                        2y_1 & -y_2 & = & 1 \\
+                        & 3y_2 & = & 6
+                    \end{array}
+                \end{equation}
+
+                Daraus folgt.
+                \begin{equation}
+                    y^* = \left( 1.5, 2, 0 \right)
+                \end{equation}
+
+                $y^*$ in $(D)$
+                \begin{equation}
+                    \begin{split}
+                        3 - 2 &\geq 1 \\
+                        6 &\geq 6 \\
+                        1.5 -4 &\geq -4
+                    \end{split}
+                \end{equation}
+                
+                $x^*$ ist eine optimale Lösung für $(P)$.
 
         \end{enumerate}
 
