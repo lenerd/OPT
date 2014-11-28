@@ -9,7 +9,7 @@
 % \usepackage[top=2.5cm,bottom=3cm,left=1.5cm,right=1.5cm]{geometry}
 
 \usepackage{amsmath, amssymb, amsfonts, amsthm, mathtools}
-\usepackage{marvosym}
+\usepackage{marvosym, stmaryrd}
 \setcounter{MaxMatrixCols}{13}
 \allowdisplaybreaks
 \usepackage[output-decimal-marker={,}]{siunitx}
@@ -79,7 +79,7 @@
                 \begin{equation}
                     \begin{gathered}
                         \text{minimiere }
-                        12x_1 + 11x_2 + 7x_3 + 5x_4 \\
+                        \frac{22}{3}y_1 + \frac{4}{3}y_2 + \frac{13}{3}y_3 \\
                         \text{unter den Nebenbedingungen} \\
                         \begin{array}{rrrcr}
                             y_1 & + 4y_2 & +2y_3 & \geq & 12 \\
@@ -91,8 +91,8 @@
                     \end{gathered}
                 \end{equation}
 
-                Da $x_1^* = x_3^* = 0$ muss Gleichheit nur zweite die zweite und
-                die vierte Zeile von $(D)$ gelten werden.
+                Da $x_1^* = x_3^* = 0$ muss Gleichheit nur für die zweite und
+                die vierte Zeile von $(D)$ gelten.
 
                 $x^*$ in $(P)$
                 \begin{equation}
@@ -102,7 +102,6 @@
                         \frac{4}{3} + \frac{8}{3} = \frac{12}{3} &< \frac{13}{3}
                     \end{split}
                 \end{equation}
-
                 Aus der dritten Zeile folgt, dass $y_3^* = 0$ sein muss.
 
                 Wir erhalten folgendes Gleichungssystem.
@@ -110,8 +109,7 @@
                     \begin{array}{rrrcr}
                         3y_1 & +2y_2 & = & 11 \\
                         5y_1 & -2y_2 & = & 5
-                    \end{array} \\
-                    \label{eq:lgs}
+                    \end{array}
                 \end{equation}
 
                 Daraus folgt.
