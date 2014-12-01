@@ -113,9 +113,9 @@
                     \end{array}
                 \end{equation}
 
-                Daraus folgt.
+                Daraus folgt
                 \begin{equation}
-                    y^* = \left( 2, 2.5, 0 \right)
+                    y^* = \left( 2, 2.5, 0 \right) \text{ .}
                 \end{equation}
                 
                 $y^*$ in $(D)$
@@ -167,9 +167,9 @@
                     \end{array}
                 \end{equation}
 
-                Daraus folgt.
+                Daraus folgt
                 \begin{equation}
-                    y^* = \left( 1.5, 2, 0 \right)
+                    y^* = \left( 1.5, 2, 0 \right) \text{ .}
                 \end{equation}
 
                 $y^*$ in $(D)$
@@ -198,7 +198,100 @@
                 \end{equation}
                 
             \item
-                TODO
+                Das ursprüngliche Problem $(P)$ von Aufgabenblatt 5 in normaler Form. \\
+                \begin{tabular}{rl}
+                    $x_1$ & Sorte A in regulärer Zeit veredelt \\
+                    $x_2$ & Sorte A in Überstunden veredelt \\
+                    $x_3$ & Sorte B in regulärer Zeit veredelt \\
+                    $x_4$ & Sorte B in Überstunden veredelt \\
+                    $x_5$ & Sorte C in regulärer Zeit veredelt \\
+                    $x_6$ & Sorte C in Überstunden veredelt \\
+                \end{tabular}
+                \begin{equation}
+                    \begin{gathered}
+                        \text{maximiere} \\
+                        8x_1 +3x_2 +9x_3 +5x_4 +6x_5 +3x_6 \\
+                        \text{unter den Nebenbedingungen} \\
+                        \begin{array}{rrrrrrcr}
+                            x_1 & +x_2 & & & & &  \leq & 200 \\
+                            & & x_3 & +x_4 & & &  \leq & 115 \\
+                            & & & & x_5 & +x_6 &  \leq & 240 \\
+                            x_1 & & +x_3 & & +x_5 & &  \leq & 210 \\
+                            & x_2 & & +x_4 & & +x_6 &  \leq & 125 \\
+                        \end{array} \\
+                        x_1, x_2, x_3, x_4, x_5, x_6 \geq 0
+                    \end{gathered}
+                \end{equation}
+
+                Das duale Problem $(D)$.
+                \begin{equation}
+                    \begin{gathered}
+                        \text{minimiere} \\
+                        200y_1 +115y_2 +240y_3 + 210y_4 +125y_5 \\
+                        \text{unter den Nebenbedingungen} \\
+                        \begin{array}{rrrrrcr}
+                            y_1 & & & +y_4 & & \geq & 8 \\
+                            y_1 & & & & +y_5 & \geq & 3 \\
+                            & y_2 & & +y_4 & & \geq & 9 \\
+                            & y_2 & & & +y_5 & \geq & 5 \\
+                            & & y_3 & +y_4 & & \geq & 6 \\
+                            & & y_3 & & +y_5 & \geq & 3 \\
+                        \end{array} \\
+                        y_1, y_2, y_3, y_4, y_5 \geq 0
+                    \end{gathered}
+                \end{equation}
+
+                Die gegebene Lösung $x^*$.
+                \begin{equation}
+                    x^* = \left( 200, 0, 10, 105, 0, 20 \right)
+                \end{equation}
+
+                Da $x_2^* = x_5^* = 0$, muss Gleichheit nur für die erste,
+                dritte, vierte und sechste Zeile gelten.
+
+                $x^*$ in $(P)$
+                \begin{equation}
+                    \begin{split}
+                        200 + 0 &= 200 \\
+                        10 + 105 &= 115 \\
+                        20 &< 125 \\
+                        200 + 10 &= 210 \\
+                        105 + 20 &= 125
+                    \end{split}
+                \end{equation}
+
+                Aus der dritten Zeile folgt, dass $y_3^* = 0$ sein muss.
+                
+                Wir erhalten folgendes Gleichungssystem.
+                \begin{equation}
+                    \begin{array}{rrrrcr}
+                        y_1 & & +y_4 & & = & 8 \\
+                        & y_2 & +y_4 & & = & 9 \\
+                        & y_2 & & +y_5 & = & 5 \\
+                        & & & y_5 & = & 3 \\
+                    \end{array}
+                \end{equation}
+
+                Daraus folgt
+                \begin{equation}
+                    y^* = \left( 1, 2, 0, 7, 3 \right) \text{ .}
+                \end{equation}
+                
+                $y^*$ in $(D)$
+                \begin{equation}
+                    \begin{split}
+                        1 + 7 &\geq 8 \\
+                        1 + 4 &\geq 3 \\
+                        2 + 7 &\geq 9 \\
+                        2 + 3 &\geq 5 \\
+                        7 &\geq 7 \\
+                        3 &\geq 3
+                    \end{split}
+                \end{equation}
+
+                Da in der zweiten Zeile Ungleichheit herrscht und $x_2^* = 2$
+                gilt, handelt es sich um eine optimale Strategie.
+                
 
         \end{enumerate}
 
