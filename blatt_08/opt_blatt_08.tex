@@ -167,7 +167,44 @@
                         Problem $(D)$.
                         
 
-                    \item
+                    \item $(D)$
+                        \begin{equation}
+                            \begin{gathered}
+                                \text{minimiere }
+                                100y_1 +4000y_2 \\
+                                \text{unter den Nebenbedingungen} \\
+                                \begin{array}{rrcr}
+                                    y_1 & +10y_2 & \geq & 40 \\
+                                    y_1 & +50y_2 & \geq & 70 \\
+                                \end{array} \\
+                                y_1, y_2 \geq 0
+                            \end{gathered}
+                        \end{equation}
+
+                        Weder ein $x_i^*$ noch ein $y_i^*$ ist 0, daher müssen
+                        für alle Ungleichungen in $(P)$ bzw. $(D)$ Gleichheit
+                        gelten, wenn $x^*$ bzw. $y^*$ eingesetzt wird.
+
+                        $x^*$ in $(P)$
+                        \begin{equation}
+                            \begin{split}
+                                25 +75 &= 100 \\
+                                250 +3750 &= 4000 \\
+                            \end{split}
+                        \end{equation}
+
+                        $y^*$ in $(D)$
+                        \begin{equation}
+                            \begin{split}
+                                32.5 +7.5 &= 40 \\
+                                32.5 +37.5 &= 70 \\
+                            \end{split}
+                        \end{equation}
+                        
+                        Die komplementären Schlupfbedingungen sind für $x^*$
+                        und $y^*$ erfüllt.
+                        Es handelt sich daher um optimale Lösungen für $(P)$
+                        bzw. $(D)$.
 
                 \end{enumerate}
 
