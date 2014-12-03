@@ -115,7 +115,57 @@
         \begin{enumerate}
             \item
                 \begin{enumerate}[(i)]
-                    \item
+                    \item Das LP-Problem $(P)$
+                        \begin{equation}
+                            \begin{gathered}
+                                \text{maximiere }
+                                40x_1 +70x_2 \\
+                                \text{unter den Nebenbedingungen} \\
+                                \begin{array}{rrcr}
+                                    x_1 & +x_2 & \leq & 100 \\
+                                    10x_1 & +50x_2 & \leq & 4000 \\
+                                \end{array} \\
+                                x_1, x_2 \geq 0
+                            \end{gathered}
+                        \end{equation}
+
+                        Starttableau
+                        \begin{equation}
+                            \begin{array}{rcrrr}
+                                x_3 & = & 100 & -x_1 & -x_2 \\
+                                x_4 & = & 4000 & -10x_1 & -50x_2 \\
+                                \hline
+                                z & = & & 40x_1 & +70x_2 \\
+                            \end{array}
+                        \end{equation}
+                        Eingangsvariable: $x_2$ \\
+                        Ausgangsvariable: $x_4$
+
+                        1. Iteration
+                        \begin{equation}
+                            \begin{array}{rcrrr}
+                                x_2 & = & 80 & -\frac{1}{5}x_1 & -\frac{1}{50}x_4 \\
+                                x_3 & = & 20 & -\frac{4}{5}x_1 & +\frac{1}{50}x_4 \\
+                                \hline
+                                z & = & 5600 & +26x_1 & -\frac{7}{5}x_4 \\
+                            \end{array}
+                        \end{equation}
+                        Eingangsvariable: $x_1$ \\
+                        Ausgangsvariable: $x_3$
+
+                        2. Iteration
+                        \begin{equation}
+                            \begin{array}{rcrrr}
+                                x_1 & = & 25 & +\frac{1}{40}x_4 & -\frac{5}{4}x_3 \\
+                                x_2 & = & 75 & -\frac{1}{40}x_4 & +\frac{1}{4}x_3 \\
+                                \hline
+                                z & = & 6250 & -0.75x_4 & -32.5x_3 \\
+                            \end{array}
+                        \end{equation}
+                        $x* = \left( 25, 75 \right)$ und $y* = \left( 0.75, 32.5 \right)$
+                        sind optimale Lösungen für $(P)$ bzw. das zu $(P)$ duale
+                        Problem $(D)$.
+                        
 
                     \item
 
