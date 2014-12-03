@@ -209,6 +209,68 @@
                 \end{enumerate}
 
             \item
+                \begin{equation}
+                    \begin{gathered}
+                        \text{maximiere }
+                        40x_1 +70x_2 \\
+                        \text{unter den Nebenbedingungen} \\
+                        \begin{array}{rrcr}
+                            x_1 & +x_2 & \leq & 100 \\
+                            10x_1 & +50x_2 & \leq & 4000 + t \\
+                        \end{array} \\
+                        x_1, x_2 \geq 0
+                    \end{gathered}
+                \end{equation}
+
+                Starttableau
+                \begin{equation}
+                    \begin{array}{rcrrrrc}
+                        x_3 & = & 100 & & -x_1 & -x_2 \\
+                        x_4 & = & 4000 & +t & -10x_1 & -50x_2 & (\star\star) \\
+                        \hline
+                        z & = & & & 40x_1 & +70x_2 \\
+                    \end{array}
+                \end{equation}
+                Eingangsvariable: $x_2$ \\
+                Ausgangsvariable: $x_4$
+
+                1. Iteration
+                \begin{equation}
+                    \begin{array}{rcrrrrc}
+                        x_2 & = & 80 & +\frac{1}{50}t & -\frac{1}{5}x_1 & -\frac{1}{50}x_4 & (\star\star) \\
+                        x_3 & = & 20 & -\frac{1}{50}t & -\frac{4}{5}x_1 & +\frac{1}{50}x_4 & (\star) \\
+                        \hline
+                        z & = & 5600 & +\frac{7}{5}t & +26x_1 & -\frac{7}{5}x_4 \\
+                    \end{array}
+                \end{equation}
+
+                Eingangsvariable: $x_1$ \\
+                Ausgangsvariable: $x_3$
+
+                2. Iteration
+                \begin{equation}
+                    \begin{array}{rcrrrrc}
+                        x_1 & = & 25 & -\frac{1}{40}t & +\frac{1}{40}x_4 & -\frac{5}{4}x_3 & (\star) \\
+                        x_2 & = & 75 & +\frac{1}{40}t & -\frac{1}{40}x_4 & +\frac{1}{4}x_3 & (\star\star) \\
+                        \hline
+                        z & = & 6250 & +0.75t & -0.75x_4 & -32.5x_3 \\
+                    \end{array}
+                \end{equation}
+
+                \begin{itemize}
+                    \item
+                        In den mit $(\star)$ markierten Zeilen wird von der
+                        Voraussetzung $t \leq 1000$ Gebrauch gemacht, da
+                        $x_1, x_3 \geq 0$ gelten muss.
+                    \item
+                        In den mit $(\star\star)$ markierten Zeilen wird
+                        Gebrauch von der Voraussetzung $t \geq 0$ gemacht.
+                        Für große Beträge von $x$, könnte $x_2 \geq 0$ verletzt
+                        werden.
+                \end{itemize}
+
+                Für die optimale Lösung $x^* = \left( 25 -0.025t, 75+0.025t \right)$
+                wird ein Gewinn von $z = 6250 + 0.75t$ erzielt.
 
         \end{enumerate}
 
