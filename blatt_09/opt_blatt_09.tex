@@ -1195,6 +1195,60 @@
 
                 \end{enumerate}
 
+            \item Iteration
+                \begin{enumerate}[1.]
+                    \item Schritt (Lösung von $y^TB = c_B^T$)
+                        \begin{equation}
+                            y^T
+                            \begin{pmatrix}
+                                1 & -1 \\
+                                1 &  1 \\
+                            \end{pmatrix}
+                            =
+                            \begin{pmatrix}
+                                3 & 9
+                            \end{pmatrix}
+                            \quad\Rightarrow\quad
+                            y^T =
+                            \begin{pmatrix}
+                                -3 & 6
+                            \end{pmatrix}
+                        \end{equation}
+                        
+                    \item Schritt (Eingangsvariable und -spalte)
+                        \begin{equation}
+                            A_N =
+                            \begin{pmatrix}
+                                -7 & -3 & 1 & 0 \\
+                                 3 &  1 & 0 & 1 \\
+                            \end{pmatrix}
+                        \end{equation}
+                        \begin{align}
+                            y^TA_N &=
+                            \begin{pmatrix}
+                                39 & 15 & 3 & 6
+                            \end{pmatrix} \\
+                            c^TA_N &=
+                            \begin{pmatrix}
+                                -11 & -9 & 0 & 0
+                            \end{pmatrix}
+                        \end{align}
+                        Da $y^TA_N$ komponentenweise größer als $c^TA_N$
+                        ist, haben wir mit $x^*$ die optimale Lösung für
+                        das LP-Problem gefunden.
+                        \begin{equation}
+                            x^* =
+                            \begin{pmatrix}
+                                2 \\ 0 \\ 1 \\ 0 \\ 0 \\ 0
+                            \end{pmatrix}
+                        \end{equation}
+                        Das optimale Ergebnis lautet
+                        \begin{equation}
+                            z = c^T \cdot x^* = 6 + 1 = 7
+                        \end{equation}
+
+                \end{enumerate}
+
         \end{enumerate}
 
 
