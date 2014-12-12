@@ -1078,6 +1078,123 @@
 
                 \end{enumerate}
 
+            \item Iteration
+                \begin{enumerate}[1.]
+                    \item Schritt (Lösung von $y^TB = c_B^T$)
+                        \begin{equation}
+                            y^T
+                            \begin{pmatrix}
+                                1 & -7 \\
+                                1 &  3 \\
+                            \end{pmatrix}
+                            =
+                            \begin{pmatrix}
+                                3 & -11
+                            \end{pmatrix}
+                            \quad\Rightarrow\quad
+                            y^T =
+                            \begin{pmatrix}
+                                2 & 1
+                            \end{pmatrix}
+                        \end{equation}
+                        
+                    \item Schritt (Eingangsvariable und -spalte)
+                        \begin{equation}
+                            A_N =
+                            \begin{pmatrix}
+                                -1 & -3 & 1 & 0 \\
+                                 1 &  1 & 0 & 1 \\
+                            \end{pmatrix}
+                        \end{equation}
+                        \begin{align}
+                            y^TA_N &=
+                            \begin{pmatrix}
+                                -1 & -5 & 2 & 1
+                            \end{pmatrix} \\
+                            c^TA_N &=
+                            \begin{pmatrix}
+                                1 & -9 & 0 & 0
+                            \end{pmatrix}
+                        \end{align}
+                        Wir wählen $x_3$ als Eingangsvariable und
+                        \begin{equation}
+                            a =
+                            \begin{pmatrix}
+                                -1 & 1
+                            \end{pmatrix}
+                            \text{ .}   
+                        \end{equation}
+
+                    \item Schritt (Lösung von $Bd = a$)
+                        \begin{equation}
+                            \begin{pmatrix}
+                                1 & -7 \\
+                                1 &  3 \\
+                            \end{pmatrix}
+                            d
+                            =
+                            \begin{pmatrix}
+                                -1 & 1
+                            \end{pmatrix}
+                            \quad\Rightarrow\quad
+                            d =
+                            \begin{pmatrix}
+                                \frac{2}{5} \\ \frac{1}{5}
+                            \end{pmatrix}
+                        \end{equation}
+
+                    \item Schritt (Ausgangsvariable)
+                        \begin{equation}
+                            \begin{split}
+                                x_B^* - td &\geq 0 \\
+                                \begin{pmatrix}
+                                    \frac{12}{5} \\ \frac{1}{5}
+                                \end{pmatrix}
+                                - t
+                                \begin{pmatrix}
+                                    \frac{2}{5} \\ \frac{1}{5}
+                                \end{pmatrix}
+                                &\geq 0
+                                \quad\Rightarrow\quad
+                                t \leq 1
+                            \end{split}
+                        \end{equation}
+                        $t = 1$
+                        \begin{equation}
+                            \begin{pmatrix}
+                                \frac{12}{5} \\ \frac{1}{5}
+                            \end{pmatrix}
+                            - t
+                            \begin{pmatrix}
+                                \frac{2}{5} \\ \frac{1}{5}
+                            \end{pmatrix}
+                            =
+                            \begin{pmatrix}
+                                2 \\ 0
+                            \end{pmatrix}
+                        \end{equation}
+                        Wir wählen $x_2$ als Ausgangsvariable.
+
+                    \item Schritt (Update)
+                        \begin{gather}
+                            x_B^* =
+                            \begin{pmatrix}
+                                x_1^* \\ x_3^*
+                            \end{pmatrix}
+                            =
+                            \begin{pmatrix}
+                                2 \\ 1
+                            \end{pmatrix}
+                            \quad
+                            B =
+                            \begin{pmatrix}
+                                1 & -1 \\
+                                1 &  1 \\
+                            \end{pmatrix}
+                        \end{gather}
+
+                \end{enumerate}
+
         \end{enumerate}
 
 
