@@ -77,6 +77,63 @@
 
 \begin{enumerate}[label=\bfseries\arabic*.]
     \item
+        Algorithmus von Edmonds und Karp
+
+        \begin{figure}[h]
+            \centering
+            \begin{tikzpicture}[
+                auto,
+                scale=4,
+            ]
+                \tikzstyle{vertex}=[
+                    circle,
+                    fill,
+                    minimum size=0.1cm,
+                    align=center,
+                ]
+                \tikzstyle{edge}=[
+                    ->,
+                    >=stealth',
+                ]
+                \tikzstyle{augm}=[
+                    ultra thick,
+                ]
+
+                \node[vertex] (s) at (0,1) {};
+                \node[vertex] (a) at (1,2) {};
+                \node[vertex] (b) at (1,1) {};
+                \node[vertex] (c) at (1,0) {};
+                \node[vertex] (d) at (2,0) {};
+                \node[vertex] (e) at (2,1) {};
+                \node[vertex] (f) at (2,1.5) {};
+                \node[vertex] (t) at (3,1) {};
+
+                \node[align=center, anchor=east]  at (s.west)  {$s$\\$(-,\infty)$};
+                \node[align=center, anchor=south] at (a.north) {$(s,+,5)$\\$a$};
+                \node[align=center, anchor=north] at (b.south) {$b$\\$(s,+,5)$};
+                \node[align=center, anchor=north] at (c.south) {$c$\\$(s,+,6)$};
+                \node[align=center, anchor=north] at (d.south) {$d$\\$(b,+,5)$};
+                \node[align=center, anchor=north] at (e.south) {$e$\\$(b,+,3)$};
+                \node[align=center, anchor=south] at (f.north) {$(a,+,3)$\\$f$};
+                \node[align=center, anchor=west]  at (t.east)  {$t$\\$(f,+,3)$};
+
+                \draw[edge, augm] (s) to node {$0(5)$} (a);
+                \draw[edge]       (s) to node {$0(5)$} (b);
+                \draw[edge]       (s) to node {$0(6)$} (c);
+                \draw[edge]       (a) to node {$0(2)$} (b);
+                \draw[edge, augm] (a) to node {$0(3)$} (f);
+                \draw[edge]       (b) to node {$0(6)$} (d);
+                \draw[edge]       (b) to node {$0(3)$} (e);
+                \draw[edge]       (b) to node {$0(2)$} (f);
+                \draw[edge]       (c) to node {$0(4)$} (d);
+                \draw[edge]       (d) to node {$0(5)$} (t);
+                \draw[edge]       (e) to node {$0(4)$} (t);
+                \draw[edge, augm] (f) to node {$0(4)$} (t);
+
+            \end{tikzpicture}
+            \caption{$w(f_0) = 0$}
+            \label{fig:ek0}
+        \end{figure}
 
     \item
         \begin{enumerate}
