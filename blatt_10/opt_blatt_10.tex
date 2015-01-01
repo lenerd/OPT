@@ -127,6 +127,26 @@ s = 0.0416255, m = 0, o = 0 \end{verbatim}
                 Der Salat enthält \SI{232,515}{\kilo\calorie}.
 
             \item
+                Die Eingabe des Problems in der Form
+                \begin{verbatim}
+Minimize p = 3x1 + 24x2 + 13x3 + 9x4 + 20x5 + 19x6 subject to
+110x1 + 205x2 + 160x3 + 160x4 + 420x5 + 260x6 >= 2000
+4x1 + 32x2 + 13x3 + 8x4 + 4x5 + 14x6 >= 55
+2x1 + 12x2 + 54x3 + 285x4 + 22x5 + 80x6 >= 800
+x1 <= 4
+x2 <= 3
+x3 <= 2
+x4 <= 8
+x5 <= 2
+x6 <= 2 \end{verbatim}
+                ergab das folgende Ergebnis:
+                \begin{verbatim}
+Optimal Solution: p = 92.5; x1 = 4, x2 = 0, x3 = 0, x4 = 4.5, \
+x5 = 2, x6 = 0 \end{verbatim}
+                Es ist also optimal, wenn Paul $4$ Portionen Haferflocken,
+                $4.5$ Portionen Milch, 2 Portionen Kirschkuchen und 2 Portionen
+                Bohnen zu sich nimmt.
+                Paul bezahlt $92.5$ Cent pro Tag.
 
         \end{enumerate}
 
