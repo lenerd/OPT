@@ -60,6 +60,8 @@
 \newcommand{\linf}[1]{\lim_{#1 \to \infty}}
 \newcommand{\gdw}{\Leftrightarrow}
 
+\DeclareSIUnit\calorie{cal}
+
 \renewcommand{\arraystretch}{1.3}
 
 \title{Optimierung}
@@ -106,6 +108,23 @@ f = 0, b = 0, n = 0, s = 0, m = 0.778534 \end{verbatim}
                 und \SI{77,8534}{\gram} Margarine einzukaufen.
 
             \item
+                Die Eingabe des Problems in der Form
+                \begin{verbatim}
+Minimize p = 21T + 16K + 371S + 346M + 884O subject to
+0.85T + 1.62K + 12.78S + 8.39M >= 15
+0.33T + 0.2K + 1.58S + 1.39M + 100O >= 2
+0.33T + 0.2K + 1.58S + 1.39M + 100O <= 6
+4.64T + 2.37K + 74.69S + 80.7M >= 4
+9T + 8K + 7S + 508.2M <= 100
+- T + K + S - M - O <= 0 \end{verbatim}
+                ergab das folgende Ergebnis:
+                \begin{verbatim}
+Optimal Solution: p = 232.515; t = 5.8848, k = 5.84318, \
+s = 0.0416255, m = 0, o = 0 \end{verbatim}
+                Es ist also optimal, einen Salat aus \SI{588,48}{\gram} Tomaten,
+                \SI{584,318}{\gram} Kopfsalat und \SI{4,16255}{\gram} Spinat
+                zusammenzustellen.
+                Der Salat enthält \SI{232,515}{\kilo\calorie}.
 
             \item
 
