@@ -467,10 +467,43 @@
                     \end{split}
                 \end{align}
                 
-                
-
             \item
-
+                Das Ellipsoid $E_0$ ist eine $n$-dimensionale Kugel mit Radius
+                $R$.
+                Ist $M$ die Matrix der affinen Abbildung, welche eine
+                Einheitskugel $B^n$ auf $E_0$ abbildet, so gilt $Q_0 = MM^T$.
+                Im Zuge der Abbildung muss die Einheitskugel nur um den Faktor
+                $R$ vergrößert werden.
+                Es gilt also
+                \begin{equation}
+                    M = R \cdot I_n =
+                    R \cdot
+                    \begin{pmatrix}
+                        1      & 0      & \cdots & 0      \\
+                        0      & 1      & \ddots & \vdots \\
+                        \vdots & \ddots & \ddots & 0      \\
+                        0      & \cdots & 0      & 1      \\
+                    \end{pmatrix}
+                    =
+                    \begin{pmatrix}
+                        R      & 0      & \cdots & 0      \\
+                        0      & R      & \ddots & \vdots \\
+                        \vdots & \ddots & \ddots & 0      \\
+                        0      & \cdots & 0      & R      \\
+                    \end{pmatrix}
+                \end{equation}
+                Da $M$ quadratisch ist und nur die Einträge auf der
+                Hauptdiagonalen ungleich 0 sind, gilt $M = M^T$.
+                \begin{equation}
+                    Q_0 = MM^T = M^2 =
+                    \begin{pmatrix}
+                        R^2    & 0      & \cdots & 0      \\
+                        0      & R^2    & \ddots & \vdots \\
+                        \vdots & \ddots & \ddots & 0      \\
+                        0      & \cdots & 0      & R^2    \\
+                    \end{pmatrix}
+                \end{equation}
+                
             \item
 
         \end{enumerate}
