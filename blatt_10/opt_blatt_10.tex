@@ -505,6 +505,47 @@
                 \end{equation}
                 
             \item
+                Hat $E$ die genannten Eigenschaften, so bildet folgende
+                Abbildung den Einheitskreis (bzw. -scheibe) auf $E$ ab.
+                \begin{equation}
+                    \begin{split}
+                        f \colon& \mathbb{R}^2 \to \mathbb{R}^2 \\
+                        & x \mapsto 
+                        \begin{pmatrix}
+                            a & 0 \\
+                            0 & b \\
+                        \end{pmatrix}
+                        x
+                    \end{split}
+                \end{equation}
+                Für die Matrizen $Q$ und $Q^{-1}$ gelten
+                \begin{align}
+                    Q &=
+                    \begin{pmatrix}
+                        a & 0 \\
+                        0 & b \\
+                    \end{pmatrix}
+                    \begin{pmatrix}
+                        a & 0 \\
+                        0 & b \\
+                    \end{pmatrix}^T
+                    =
+                    \begin{pmatrix}
+                        a^2 & 0   \\
+                        0   & b^2 \\
+                    \end{pmatrix} \text{ und} \\
+                    Q^{-1} &=
+                    \begin{pmatrix}
+                        a^{-2} & 0      \\
+                        0      & b^{-2} \\
+                    \end{pmatrix} \text{ , da} \\
+                    QQ^{-1} &=
+                    \begin{pmatrix}
+                        a^2 \cdot a^{-2} & 0 \\
+                        0 & b^2 \cdot b^{-2} \\
+                    \end{pmatrix}
+                    = I_2 \text{ .}
+                \end{align}
 
         \end{enumerate}
 
