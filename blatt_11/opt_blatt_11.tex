@@ -82,12 +82,26 @@
             \item
                 \begin{enumerate}[(i)]
                     \item
+                        Die Knoten werden in folgender Reihenfolge markiert:
+                        $s, a, c, d, e, f, b, t$.
+                        Es gibt keine Knoten, die unmarkiert bleiben.
 
                     \item
+                        \begin{align}
+                            P &= sacft \\
+                            f_2(s,a) &= 27 \\
+                            f_2(a, c) &= 10 \\
+                            f_2(c, f) &= 13 \\
+                            f_2(f, t) &= 15 \\
+                            w(f_2) &= 29
+                        \end{align}
 
                 \end{enumerate}
 
             \item
+                Knoten, die während des letzten Versuchs, einen augmentierenden
+                Pfad zu finden, markiert wurden, gehören zu $S$; die
+                unmarkierten gehören zu $T$.
 
         \end{enumerate}
 
