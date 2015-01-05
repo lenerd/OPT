@@ -27,6 +27,7 @@
 \usetikzlibrary{calc}
 \usetikzlibrary{arrows}
 \usetikzlibrary{arrows.meta}
+\usetikzlibrary{decorations}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.5.1}
 \usepgfplotslibrary{fillbetween}
@@ -92,9 +93,870 @@
 
     \item
         \begin{enumerate}
-            \item
+            \item \hfill \\
+                \begin{figure}[h]
+                    \centering
+                    \begin{tikzpicture}[
+                        auto,
+                        scale=2,
+                    ]
+                        \tikzstyle{vertex}=[
+                            circle,
+                            fill,
+                            minimum size=0.005cm,
+                            align=center,
+                        ]
+                        \tikzstyle{edge}=[
+                        ]
+                        \tikzstyle{match}=[
+                            decorate,
+                            decoration={snake, segment length=2mm},
+                        ]
 
-            \item
+                        \node[vertex, label=below:$y_1$] (y1) at (0,0) {};
+                        \node[vertex, label=below:$y_2$] (y2) at (1,0) {};
+                        \node[vertex, label=below:$y_3$] (y3) at (2,0) {};
+                        \node[vertex, label=below:$y_4$] (y4) at (3,0) {};
+                        \node[vertex, label=below:$y_5$] (y5) at (4,0) {};
+                        \node[vertex, label=below:$y_6$] (y6) at (5,0) {};
+
+                        \node[vertex, label=above:$x_1$] (x1) at (0,2) {};
+                        \node[vertex, label=above:$x_2$] (x2) at (1,2) {};
+                        \node[vertex, label=above:$x_3$] (x3) at (2,2) {};
+                        \node[vertex, label=above:$x_4$] (x4) at (3,2) {};
+                        \node[vertex, label=above:$x_5$] (x5) at (4,2) {};
+                        \node[vertex, label=above:$x_6$] (x6) at (5,2) {};
+                        \node[vertex, label=above:$x_7$] (x7) at (6,2) {};
+
+                        \draw[match]      (x1) to (y1);
+                        \draw[edge]       (x1) to (y2);
+                        \draw[edge]       (x1) to (y3);
+                        \draw[edge]       (x1) to (y4);
+
+                        \draw[edge]       (x2) to (y1);
+                        \draw[edge]       (x2) to (y4);
+
+                        \draw[edge]       (x3) to (y1);
+                        \draw[edge]       (x3) to (y5);
+
+                        \draw[edge]       (x4) to (y2);
+                        \draw[edge]       (x4) to (y3);
+                        \draw[edge]       (x4) to (y4);
+                        \draw[edge]       (x4) to (y5);
+                        \draw[edge]       (x4) to (y6);
+
+                        \draw[edge]       (x5) to (y1);
+                        \draw[edge]       (x5) to (y5);
+
+                        \draw[edge]       (x6) to (y2);
+                        \draw[edge]       (x6) to (y3);
+                        \draw[edge]       (x6) to (y4);
+                        \draw[edge]       (x6) to (y5);
+                        \draw[edge]       (x6) to (y6);
+
+                        \draw[edge]       (x7) to (y3);
+                        \draw[edge]       (x7) to (y5);
+
+                    \end{tikzpicture}
+                    \caption{$M_1 = \left\{ \{x_1, y_1\} \right\}$}
+                    \label{fig:a-1}
+                \end{figure}
+
+                \begin{figure}[h]
+                    \centering
+                    \begin{tikzpicture}[
+                        auto,
+                        scale=2,
+                    ]
+                        \tikzstyle{vertex}=[
+                            circle,
+                            fill,
+                            minimum size=0.005cm,
+                            align=center,
+                        ]
+                        \tikzstyle{edge}=[
+                        ]
+                        \tikzstyle{match}=[
+                            decorate,
+                            decoration={snake, segment length=2mm},
+                        ]
+
+                        \node[vertex, label=below:$y_1$] (y1) at (0,0) {};
+                        \node[vertex, label=below:$y_2$] (y2) at (1,0) {};
+                        \node[vertex, label=below:$y_3$] (y3) at (2,0) {};
+                        \node[vertex, label=below:$y_4$] (y4) at (3,0) {};
+                        \node[vertex, label=below:$y_5$] (y5) at (4,0) {};
+                        \node[vertex, label=below:$y_6$] (y6) at (5,0) {};
+
+                        \node[vertex, label=above:$x_1$] (x1) at (0,2) {};
+                        \node[vertex, label=above:$x_2$] (x2) at (1,2) {};
+                        \node[vertex, label=above:$x_3$] (x3) at (2,2) {};
+                        \node[vertex, label=above:$x_4$] (x4) at (3,2) {};
+                        \node[vertex, label=above:$x_5$] (x5) at (4,2) {};
+                        \node[vertex, label=above:$x_6$] (x6) at (5,2) {};
+                        \node[vertex, label=above:$x_7$] (x7) at (6,2) {};
+
+                        \draw[match]      (x1) to (y1);
+                        \draw[edge]       (x1) to (y2);
+                        \draw[edge]       (x1) to (y3);
+                        \draw[edge]       (x1) to (y4);
+
+                        \draw[edge]       (x2) to (y1);
+                        \draw[match]      (x2) to (y4);
+
+                        \draw[edge]       (x3) to (y1);
+                        \draw[edge]       (x3) to (y5);
+
+                        \draw[edge]       (x4) to (y2);
+                        \draw[edge]       (x4) to (y3);
+                        \draw[edge]       (x4) to (y4);
+                        \draw[edge]       (x4) to (y5);
+                        \draw[edge]       (x4) to (y6);
+
+                        \draw[edge]       (x5) to (y1);
+                        \draw[edge]       (x5) to (y5);
+
+                        \draw[edge]       (x6) to (y2);
+                        \draw[edge]       (x6) to (y3);
+                        \draw[edge]       (x6) to (y4);
+                        \draw[edge]       (x6) to (y5);
+                        \draw[edge]       (x6) to (y6);
+
+                        \draw[edge]       (x7) to (y3);
+                        \draw[edge]       (x7) to (y5);
+
+                    \end{tikzpicture}
+                    \caption{$M_2 = \left\{ \{x_1, y_1\}, \{x_2, y_4\} \right\}$}
+                    \label{fig:a-2}
+                \end{figure}
+
+                \begin{figure}[h]
+                    \centering
+                    \begin{tikzpicture}[
+                        auto,
+                        scale=2,
+                    ]
+                        \tikzstyle{vertex}=[
+                            circle,
+                            fill,
+                            minimum size=0.005cm,
+                            align=center,
+                        ]
+                        \tikzstyle{edge}=[
+                        ]
+                        \tikzstyle{match}=[
+                            decorate,
+                            decoration={snake, segment length=2mm},
+                        ]
+
+                        \node[vertex, label=below:$y_1$] (y1) at (0,0) {};
+                        \node[vertex, label=below:$y_2$] (y2) at (1,0) {};
+                        \node[vertex, label=below:$y_3$] (y3) at (2,0) {};
+                        \node[vertex, label=below:$y_4$] (y4) at (3,0) {};
+                        \node[vertex, label=below:$y_5$] (y5) at (4,0) {};
+                        \node[vertex, label=below:$y_6$] (y6) at (5,0) {};
+
+                        \node[vertex, label=above:$x_1$] (x1) at (0,2) {};
+                        \node[vertex, label=above:$x_2$] (x2) at (1,2) {};
+                        \node[vertex, label=above:$x_3$] (x3) at (2,2) {};
+                        \node[vertex, label=above:$x_4$] (x4) at (3,2) {};
+                        \node[vertex, label=above:$x_5$] (x5) at (4,2) {};
+                        \node[vertex, label=above:$x_6$] (x6) at (5,2) {};
+                        \node[vertex, label=above:$x_7$] (x7) at (6,2) {};
+
+                        \draw[match]      (x1) to (y1);
+                        \draw[edge]       (x1) to (y2);
+                        \draw[edge]       (x1) to (y3);
+                        \draw[edge]       (x1) to (y4);
+
+                        \draw[edge]       (x2) to (y1);
+                        \draw[match]      (x2) to (y4);
+
+                        \draw[edge]       (x3) to (y1);
+                        \draw[match]      (x3) to (y5);
+
+                        \draw[edge]       (x4) to (y2);
+                        \draw[edge]       (x4) to (y3);
+                        \draw[edge]       (x4) to (y4);
+                        \draw[edge]       (x4) to (y5);
+                        \draw[edge]       (x4) to (y6);
+
+                        \draw[edge]       (x5) to (y1);
+                        \draw[edge]       (x5) to (y5);
+
+                        \draw[edge]       (x6) to (y2);
+                        \draw[edge]       (x6) to (y3);
+                        \draw[edge]       (x6) to (y4);
+                        \draw[edge]       (x6) to (y5);
+                        \draw[edge]       (x6) to (y6);
+
+                        \draw[edge]       (x7) to (y3);
+                        \draw[edge]       (x7) to (y5);
+
+                    \end{tikzpicture}
+                    \caption{$M_3 = \left\{ \{x_1, y_1\}, \{x_2, y_4\}, 
+                             \{x_3, y_5\} \right\}$}
+                    \label{fig:a-3}
+                \end{figure}
+
+                \begin{figure}[h]
+                    \centering
+                    \begin{tikzpicture}[
+                        auto,
+                        scale=2,
+                    ]
+                        \tikzstyle{vertex}=[
+                            circle,
+                            fill,
+                            minimum size=0.005cm,
+                            align=center,
+                        ]
+                        \tikzstyle{edge}=[
+                        ]
+                        \tikzstyle{match}=[
+                            decorate,
+                            decoration={snake, segment length=2mm},
+                        ]
+
+                        \node[vertex, label=below:$y_1$] (y1) at (0,0) {};
+                        \node[vertex, label=below:$y_2$] (y2) at (1,0) {};
+                        \node[vertex, label=below:$y_3$] (y3) at (2,0) {};
+                        \node[vertex, label=below:$y_4$] (y4) at (3,0) {};
+                        \node[vertex, label=below:$y_5$] (y5) at (4,0) {};
+                        \node[vertex, label=below:$y_6$] (y6) at (5,0) {};
+
+                        \node[vertex, label=above:$x_1$] (x1) at (0,2) {};
+                        \node[vertex, label=above:$x_2$] (x2) at (1,2) {};
+                        \node[vertex, label=above:$x_3$] (x3) at (2,2) {};
+                        \node[vertex, label=above:$x_4$] (x4) at (3,2) {};
+                        \node[vertex, label=above:$x_5$] (x5) at (4,2) {};
+                        \node[vertex, label=above:$x_6$] (x6) at (5,2) {};
+                        \node[vertex, label=above:$x_7$] (x7) at (6,2) {};
+
+                        \draw[match]      (x1) to (y1);
+                        \draw[edge]       (x1) to (y2);
+                        \draw[edge]       (x1) to (y3);
+                        \draw[edge]       (x1) to (y4);
+
+                        \draw[edge]       (x2) to (y1);
+                        \draw[match]      (x2) to (y4);
+
+                        \draw[edge]       (x3) to (y1);
+                        \draw[match]      (x3) to (y5);
+
+                        \draw[match]      (x4) to (y2);
+                        \draw[edge]       (x4) to (y3);
+                        \draw[edge]       (x4) to (y4);
+                        \draw[edge]       (x4) to (y5);
+                        \draw[edge]       (x4) to (y6);
+
+                        \draw[edge]       (x5) to (y1);
+                        \draw[edge]       (x5) to (y5);
+
+                        \draw[edge]       (x6) to (y2);
+                        \draw[edge]       (x6) to (y3);
+                        \draw[edge]       (x6) to (y4);
+                        \draw[edge]       (x6) to (y5);
+                        \draw[edge]       (x6) to (y6);
+
+                        \draw[edge]       (x7) to (y3);
+                        \draw[edge]       (x7) to (y5);
+
+                    \end{tikzpicture}
+                    \caption{$M_4 = \left\{ \{x_1, y_1\}, \{x_2, y_4\}, 
+                        \{x_3, y_5\}, \{x_4, y_2\} \right\}$}
+                    \label{fig:a-4}
+                \end{figure}
+
+                \begin{figure}[h]
+                    \centering
+                    \begin{tikzpicture}[
+                        auto,
+                        scale=2,
+                    ]
+                        \tikzstyle{vertex}=[
+                            circle,
+                            fill,
+                            minimum size=0.005cm,
+                            align=center,
+                        ]
+                        \tikzstyle{edge}=[
+                        ]
+                        \tikzstyle{match}=[
+                            decorate,
+                            decoration={snake, segment length=2mm},
+                        ]
+
+                        \node[vertex, label=below:$y_1$] (y1) at (0,0) {};
+                        \node[vertex, label=below:$y_2$] (y2) at (1,0) {};
+                        \node[vertex, label=below:$y_3$] (y3) at (2,0) {};
+                        \node[vertex, label=below:$y_4$] (y4) at (3,0) {};
+                        \node[vertex, label=below:$y_5$] (y5) at (4,0) {};
+                        \node[vertex, label=below:$y_6$] (y6) at (5,0) {};
+
+                        \node[vertex, label=above:$x_1$] (x1) at (0,2) {};
+                        \node[vertex, label=above:$x_2$] (x2) at (1,2) {};
+                        \node[vertex, label=above:$x_3$] (x3) at (2,2) {};
+                        \node[vertex, label=above:$x_4$] (x4) at (3,2) {};
+                        \node[vertex, label=above:$x_5$] (x5) at (4,2) {};
+                        \node[vertex, label=above:$x_6$] (x6) at (5,2) {};
+                        \node[vertex, label=above:$x_7$] (x7) at (6,2) {};
+
+                        \draw[match]      (x1) to (y1);
+                        \draw[edge]       (x1) to (y2);
+                        \draw[edge]       (x1) to (y3);
+                        \draw[edge]       (x1) to (y4);
+
+                        \draw[edge]       (x2) to (y1);
+                        \draw[match]      (x2) to (y4);
+
+                        \draw[edge]       (x3) to (y1);
+                        \draw[match]      (x3) to (y5);
+
+                        \draw[match]      (x4) to (y2);
+                        \draw[edge]       (x4) to (y3);
+                        \draw[edge]       (x4) to (y4);
+                        \draw[edge]       (x4) to (y5);
+                        \draw[edge]       (x4) to (y6);
+
+                        \draw[edge]       (x5) to (y1);
+                        \draw[edge]       (x5) to (y5);
+
+                        \draw[edge]       (x6) to (y2);
+                        \draw[match]      (x6) to (y3);
+                        \draw[edge]       (x6) to (y4);
+                        \draw[edge]       (x6) to (y5);
+                        \draw[edge]       (x6) to (y6);
+
+                        \draw[edge]       (x7) to (y3);
+                        \draw[edge]       (x7) to (y5);
+
+                    \end{tikzpicture}
+                    \caption{$M_5 = \left\{ \{x_1, y_1\}, \{x_2, y_4\}, 
+                    \{x_3, y_5\}, \{x_4, y_2\}, \{x_6, y_3\} \right\}$}
+                    \label{fig:a-5}
+                \end{figure}
+
+                \begin{figure}[h]
+                    \centering
+                    \begin{tikzpicture}[
+                        auto,
+                        scale=2,
+                    ]
+                        \tikzstyle{vertex}=[
+                            circle,
+                            fill,
+                            minimum size=0.005cm,
+                            align=center,
+                        ]
+                        \tikzstyle{cover}=[
+                            draw,
+                            fill=none,
+                        ]
+
+                        \tikzstyle{edge}=[
+                        ]
+                        \tikzstyle{match}=[
+                            decorate,
+                            decoration={snake, segment length=2mm},
+                        ]
+
+                        \node[vertex, label=below:$y_1$, cover] (y1) at (0,0) {};
+                        \node[vertex, label=below:$y_2$, cover] (y2) at (1,0) {};
+                        \node[vertex, label=below:$y_3$, cover] (y3) at (2,0) {};
+                        \node[vertex, label=below:$y_4$, cover] (y4) at (3,0) {};
+                        \node[vertex, label=below:$y_5$, cover] (y5) at (4,0) {};
+                        \node[vertex, label=below:$y_6$, cover] (y6) at (5,0) {};
+
+                        \node[vertex, label=above:$x_1$] (x1) at (0,2) {};
+                        \node[vertex, label=above:$x_2$] (x2) at (1,2) {};
+                        \node[vertex, label=above:$x_3$] (x3) at (2,2) {};
+                        \node[vertex, label=above:$x_4$] (x4) at (3,2) {};
+                        \node[vertex, label=above:$x_5$] (x5) at (4,2) {};
+                        \node[vertex, label=above:$x_6$] (x6) at (5,2) {};
+                        \node[vertex, label=above:$x_7$] (x7) at (6,2) {};
+
+                        \draw[match]      (x1) to (y1);
+                        \draw[edge]       (x1) to (y2);
+                        \draw[edge]       (x1) to (y3);
+                        \draw[edge]       (x1) to (y4);
+
+                        \draw[edge]       (x2) to (y1);
+                        \draw[match]      (x2) to (y4);
+
+                        \draw[edge]       (x3) to (y1);
+                        \draw[match]      (x3) to (y5);
+
+                        \draw[match]      (x4) to (y2);
+                        \draw[edge]       (x4) to (y3);
+                        \draw[edge]       (x4) to (y4);
+                        \draw[edge]       (x4) to (y5);
+                        \draw[edge]       (x4) to (y6);
+
+                        \draw[edge]       (x5) to (y1);
+                        \draw[edge]       (x5) to (y5);
+
+                        \draw[edge]       (x6) to (y2);
+                        \draw[edge]       (x6) to (y3);
+                        \draw[edge]       (x6) to (y4);
+                        \draw[edge]       (x6) to (y5);
+                        \draw[match]      (x6) to (y6);
+
+                        \draw[match]      (x7) to (y3);
+                        \draw[edge]       (x7) to (y5);
+
+                    \end{tikzpicture}
+                    \caption{$M_6 = \left\{ \{x_1, y_1\}, \{x_2, y_4\}, 
+                    \{x_3, y_5\}, \{x_4, y_2\}, \{x_7, y_3\}, \{x_6, y_6\}
+                    \right\}$ \\ (Überdeckende Knoten weiß gefüllt.)}
+                    \label{fig:a-6}
+                \end{figure}
+
+                \FloatBarrier
+
+                In der 7. Iteration gelingt es nicht, einen augmentierenden Pfad
+                zu finden.
+                Dabei werden die folgenden Knoten mit alternierenden Pfaden
+                erreicht und markiert:
+                $x_5, y_1, y_5, x_1, x_3, y_2, y_3, y_4, x_4, x_7, x_2, y_6, x_6$
+
+                \paragraph{Ergebnis:}
+                Der Algorithmus liefert das Matching $M$ in Abb. \ref{fig:a-6}
+                mit $6$ Kanten zusammen mit der minimalen Knotenüberdeckung
+                \begin{equation}
+                    U = \left\{ y_1, y_2, y_3, y_4, y_5, y_6 \right\} \text{ .}
+                \end{equation}
+
+            \FloatBarrier
+
+            \item \hfill \\
+                \begin{figure}[h]
+                    \centering
+                    \begin{tikzpicture}[
+                        auto,
+                        scale=2,
+                    ]
+                        \tikzstyle{vertex}=[
+                            circle,
+                            fill,
+                            minimum size=0.005cm,
+                            align=center,
+                        ]
+                        \tikzstyle{edge}=[
+                        ]
+                        \tikzstyle{match}=[
+                            decorate,
+                            decoration={snake, segment length=2mm},
+                        ]
+
+                        \node[vertex, label=below:$y_1$] (y1) at (0,0) {};
+                        \node[vertex, label=below:$y_2$] (y2) at (1,0) {};
+                        \node[vertex, label=below:$y_3$] (y3) at (2,0) {};
+                        \node[vertex, label=below:$y_4$] (y4) at (3,0) {};
+                        \node[vertex, label=below:$y_5$] (y5) at (4,0) {};
+                        \node[vertex, label=below:$y_6$] (y6) at (5,0) {};
+
+                        \node[vertex, label=above:$x_1$] (x1) at (0,2) {};
+                        \node[vertex, label=above:$x_2$] (x2) at (1,2) {};
+                        \node[vertex, label=above:$x_3$] (x3) at (2,2) {};
+                        \node[vertex, label=above:$x_4$] (x4) at (3,2) {};
+                        \node[vertex, label=above:$x_5$] (x5) at (4,2) {};
+                        \node[vertex, label=above:$x_6$] (x6) at (5,2) {};
+                        \node[vertex, label=above:$x_7$] (x7) at (6,2) {};
+
+                        \draw[match]      (x1) to (y1);
+                        \draw[edge]       (x1) to (y3);
+                        \draw[edge]       (x1) to (y4);
+                        \draw[edge]       (x1) to (y5);
+
+                        \draw[edge]       (x2) to (y1);
+                        \draw[edge]       (x2) to (y2);
+                        \draw[edge]       (x2) to (y3);
+                        \draw[edge]       (x2) to (y5);
+
+                        \draw[edge]       (x3) to (y1);
+                        \draw[edge]       (x3) to (y2);
+                        \draw[edge]       (x3) to (y4);
+
+                        \draw[edge]       (x4) to (y2);
+                        \draw[edge]       (x4) to (y4);
+
+                        \draw[edge]       (x5) to (y2);
+                        \draw[edge]       (x5) to (y6);
+
+                        \draw[edge]       (x6) to (y1);
+                        \draw[edge]       (x6) to (y4);
+                        \draw[edge]       (x6) to (y6);
+
+                        \draw[edge]       (x7) to (y1);
+                        \draw[edge]       (x7) to (y4);
+                        \draw[edge]       (x7) to (y6);
+
+                    \end{tikzpicture}
+                    \caption{$M_1 = \left\{ \{x_1, y_1\} \right\}$}
+                    \label{fig:b-1}
+                \end{figure}
+
+                \begin{figure}[h]
+                    \centering
+                    \begin{tikzpicture}[
+                        auto,
+                        scale=2,
+                    ]
+                        \tikzstyle{vertex}=[
+                            circle,
+                            fill,
+                            minimum size=0.005cm,
+                            align=center,
+                        ]
+                        \tikzstyle{edge}=[
+                        ]
+                        \tikzstyle{match}=[
+                            decorate,
+                            decoration={snake, segment length=2mm},
+                        ]
+
+                        \node[vertex, label=below:$y_1$] (y1) at (0,0) {};
+                        \node[vertex, label=below:$y_2$] (y2) at (1,0) {};
+                        \node[vertex, label=below:$y_3$] (y3) at (2,0) {};
+                        \node[vertex, label=below:$y_4$] (y4) at (3,0) {};
+                        \node[vertex, label=below:$y_5$] (y5) at (4,0) {};
+                        \node[vertex, label=below:$y_6$] (y6) at (5,0) {};
+
+                        \node[vertex, label=above:$x_1$] (x1) at (0,2) {};
+                        \node[vertex, label=above:$x_2$] (x2) at (1,2) {};
+                        \node[vertex, label=above:$x_3$] (x3) at (2,2) {};
+                        \node[vertex, label=above:$x_4$] (x4) at (3,2) {};
+                        \node[vertex, label=above:$x_5$] (x5) at (4,2) {};
+                        \node[vertex, label=above:$x_6$] (x6) at (5,2) {};
+                        \node[vertex, label=above:$x_7$] (x7) at (6,2) {};
+
+                        \draw[match]      (x1) to (y1);
+                        \draw[edge]       (x1) to (y3);
+                        \draw[edge]       (x1) to (y4);
+                        \draw[edge]       (x1) to (y5);
+
+                        \draw[edge]       (x2) to (y1);
+                        \draw[match]      (x2) to (y2);
+                        \draw[edge]       (x2) to (y3);
+                        \draw[edge]       (x2) to (y5);
+
+                        \draw[edge]       (x3) to (y1);
+                        \draw[edge]       (x3) to (y2);
+                        \draw[edge]       (x3) to (y4);
+
+                        \draw[edge]       (x4) to (y2);
+                        \draw[edge]       (x4) to (y4);
+
+                        \draw[edge]       (x5) to (y2);
+                        \draw[edge]       (x5) to (y6);
+
+                        \draw[edge]       (x6) to (y1);
+                        \draw[edge]       (x6) to (y4);
+                        \draw[edge]       (x6) to (y6);
+
+                        \draw[edge]       (x7) to (y1);
+                        \draw[edge]       (x7) to (y4);
+                        \draw[edge]       (x7) to (y6);
+
+                    \end{tikzpicture}
+                    \caption{$M_2 = \left\{ \{x_1, y_1\}, \{x_2, y_2\}
+                             \right\}$}
+                    \label{fig:b-2}
+                \end{figure}
+
+                \begin{figure}[h]
+                    \centering
+                    \begin{tikzpicture}[
+                        auto,
+                        scale=2,
+                    ]
+                        \tikzstyle{vertex}=[
+                            circle,
+                            fill,
+                            minimum size=0.005cm,
+                            align=center,
+                        ]
+                        \tikzstyle{edge}=[
+                        ]
+                        \tikzstyle{match}=[
+                            decorate,
+                            decoration={snake, segment length=2mm},
+                        ]
+
+                        \node[vertex, label=below:$y_1$] (y1) at (0,0) {};
+                        \node[vertex, label=below:$y_2$] (y2) at (1,0) {};
+                        \node[vertex, label=below:$y_3$] (y3) at (2,0) {};
+                        \node[vertex, label=below:$y_4$] (y4) at (3,0) {};
+                        \node[vertex, label=below:$y_5$] (y5) at (4,0) {};
+                        \node[vertex, label=below:$y_6$] (y6) at (5,0) {};
+
+                        \node[vertex, label=above:$x_1$] (x1) at (0,2) {};
+                        \node[vertex, label=above:$x_2$] (x2) at (1,2) {};
+                        \node[vertex, label=above:$x_3$] (x3) at (2,2) {};
+                        \node[vertex, label=above:$x_4$] (x4) at (3,2) {};
+                        \node[vertex, label=above:$x_5$] (x5) at (4,2) {};
+                        \node[vertex, label=above:$x_6$] (x6) at (5,2) {};
+                        \node[vertex, label=above:$x_7$] (x7) at (6,2) {};
+
+                        \draw[match]      (x1) to (y1);
+                        \draw[edge]       (x1) to (y3);
+                        \draw[edge]       (x1) to (y4);
+                        \draw[edge]       (x1) to (y5);
+
+                        \draw[edge]       (x2) to (y1);
+                        \draw[match]      (x2) to (y2);
+                        \draw[edge]       (x2) to (y3);
+                        \draw[edge]       (x2) to (y5);
+
+                        \draw[edge]       (x3) to (y1);
+                        \draw[edge]       (x3) to (y2);
+                        \draw[match]      (x3) to (y4);
+
+                        \draw[edge]       (x4) to (y2);
+                        \draw[edge]       (x4) to (y4);
+
+                        \draw[edge]       (x5) to (y2);
+                        \draw[edge]       (x5) to (y6);
+
+                        \draw[edge]       (x6) to (y1);
+                        \draw[edge]       (x6) to (y4);
+                        \draw[edge]       (x6) to (y6);
+
+                        \draw[edge]       (x7) to (y1);
+                        \draw[edge]       (x7) to (y4);
+                        \draw[edge]       (x7) to (y6);
+
+                    \end{tikzpicture}
+                    \caption{$M_3 = \left\{ \{x_1, y_1\}, \{x_2, y_2\},
+                    \{x_3, x_4\} \right\}$}
+                    \label{fig:b-3}
+                \end{figure}
+
+                \begin{figure}[h]
+                    \centering
+                    \begin{tikzpicture}[
+                        auto,
+                        scale=2,
+                    ]
+                        \tikzstyle{vertex}=[
+                            circle,
+                            fill,
+                            minimum size=0.005cm,
+                            align=center,
+                        ]
+                        \tikzstyle{edge}=[
+                        ]
+                        \tikzstyle{match}=[
+                            decorate,
+                            decoration={snake, segment length=2mm},
+                        ]
+
+                        \node[vertex, label=below:$y_1$] (y1) at (0,0) {};
+                        \node[vertex, label=below:$y_2$] (y2) at (1,0) {};
+                        \node[vertex, label=below:$y_3$] (y3) at (2,0) {};
+                        \node[vertex, label=below:$y_4$] (y4) at (3,0) {};
+                        \node[vertex, label=below:$y_5$] (y5) at (4,0) {};
+                        \node[vertex, label=below:$y_6$] (y6) at (5,0) {};
+
+                        \node[vertex, label=above:$x_1$] (x1) at (0,2) {};
+                        \node[vertex, label=above:$x_2$] (x2) at (1,2) {};
+                        \node[vertex, label=above:$x_3$] (x3) at (2,2) {};
+                        \node[vertex, label=above:$x_4$] (x4) at (3,2) {};
+                        \node[vertex, label=above:$x_5$] (x5) at (4,2) {};
+                        \node[vertex, label=above:$x_6$] (x6) at (5,2) {};
+                        \node[vertex, label=above:$x_7$] (x7) at (6,2) {};
+
+                        \draw[match]      (x1) to (y1);
+                        \draw[edge]       (x1) to (y3);
+                        \draw[edge]       (x1) to (y4);
+                        \draw[edge]       (x1) to (y5);
+
+                        \draw[edge]       (x2) to (y1);
+                        \draw[match]      (x2) to (y2);
+                        \draw[edge]       (x2) to (y3);
+                        \draw[edge]       (x2) to (y5);
+
+                        \draw[edge]       (x3) to (y1);
+                        \draw[edge]       (x3) to (y2);
+                        \draw[match]      (x3) to (y4);
+
+                        \draw[edge]       (x4) to (y2);
+                        \draw[edge]       (x4) to (y4);
+
+                        \draw[edge]       (x5) to (y2);
+                        \draw[match]      (x5) to (y6);
+
+                        \draw[edge]       (x6) to (y1);
+                        \draw[edge]       (x6) to (y4);
+                        \draw[edge]       (x6) to (y6);
+
+                        \draw[edge]       (x7) to (y1);
+                        \draw[edge]       (x7) to (y4);
+                        \draw[edge]       (x7) to (y6);
+
+                    \end{tikzpicture}
+                    \caption{$M_4 = \left\{ \{x_1, y_1\}, \{x_2, y_2\},
+                    \{x_3, x_4\}, \{x_5, y_6\} \right\}$}
+                    \label{fig:b-4}
+                \end{figure}
+
+                \begin{figure}[h]
+                    \centering
+                    \begin{tikzpicture}[
+                        auto,
+                        scale=2,
+                    ]
+                        \tikzstyle{vertex}=[
+                            circle,
+                            fill,
+                            minimum size=0.005cm,
+                            align=center,
+                        ]
+                        \tikzstyle{edge}=[
+                        ]
+                        \tikzstyle{match}=[
+                            decorate,
+                            decoration={snake, segment length=2mm},
+                        ]
+
+                        \node[vertex, label=below:$y_1$] (y1) at (0,0) {};
+                        \node[vertex, label=below:$y_2$] (y2) at (1,0) {};
+                        \node[vertex, label=below:$y_3$] (y3) at (2,0) {};
+                        \node[vertex, label=below:$y_4$] (y4) at (3,0) {};
+                        \node[vertex, label=below:$y_5$] (y5) at (4,0) {};
+                        \node[vertex, label=below:$y_6$] (y6) at (5,0) {};
+
+                        \node[vertex, label=above:$x_1$] (x1) at (0,2) {};
+                        \node[vertex, label=above:$x_2$] (x2) at (1,2) {};
+                        \node[vertex, label=above:$x_3$] (x3) at (2,2) {};
+                        \node[vertex, label=above:$x_4$] (x4) at (3,2) {};
+                        \node[vertex, label=above:$x_5$] (x5) at (4,2) {};
+                        \node[vertex, label=above:$x_6$] (x6) at (5,2) {};
+                        \node[vertex, label=above:$x_7$] (x7) at (6,2) {};
+
+                        \draw[match]      (x1) to (y1);
+                        \draw[edge]       (x1) to (y3);
+                        \draw[edge]       (x1) to (y4);
+                        \draw[edge]       (x1) to (y5);
+
+                        \draw[edge]       (x2) to (y1);
+                        \draw[edge]       (x2) to (y2);
+                        \draw[match]      (x2) to (y3);
+                        \draw[edge]       (x2) to (y5);
+
+                        \draw[edge]       (x3) to (y1);
+                        \draw[edge]       (x3) to (y2);
+                        \draw[match]      (x3) to (y4);
+
+                        \draw[match]      (x4) to (y2);
+                        \draw[edge]       (x4) to (y4);
+
+                        \draw[edge]       (x5) to (y2);
+                        \draw[match]      (x5) to (y6);
+
+                        \draw[edge]       (x6) to (y1);
+                        \draw[edge]       (x6) to (y4);
+                        \draw[edge]       (x6) to (y6);
+
+                        \draw[edge]       (x7) to (y1);
+                        \draw[edge]       (x7) to (y4);
+                        \draw[edge]       (x7) to (y6);
+
+                    \end{tikzpicture}
+                    \caption{$M_5 = \left\{ \{x_1, y_1\}, \{x_3, x_4\},
+                    \{x_5, y_6\}, \{x_4, y_2\}, \{x_2, y_3\} \right\}$}
+                    \label{fig:b-5}
+                \end{figure}
+
+                \begin{figure}[h]
+                    \centering
+                    \begin{tikzpicture}[
+                        auto,
+                        scale=2,
+                    ]
+                        \tikzstyle{vertex}=[
+                            circle,
+                            fill,
+                            minimum size=0.005cm,
+                            align=center,
+                        ]
+                        \tikzstyle{cover}=[
+                            draw,
+                            fill=none,
+                        ]
+                        
+                        \tikzstyle{edge}=[
+                        ]
+                        \tikzstyle{match}=[
+                            decorate,
+                            decoration={snake, segment length=2mm},
+                        ]
+
+                        \node[vertex, label=below:$y_1$, cover] (y1) at (0,0) {};
+                        \node[vertex, label=below:$y_2$, cover] (y2) at (1,0) {};
+                        \node[vertex, label=below:$y_3$] (y3) at (2,0) {};
+                        \node[vertex, label=below:$y_4$, cover] (y4) at (3,0) {};
+                        \node[vertex, label=below:$y_5$] (y5) at (4,0) {};
+                        \node[vertex, label=below:$y_6$, cover] (y6) at (5,0) {};
+
+                        \node[vertex, label=above:$x_1$, cover] (x1) at (0,2) {};
+                        \node[vertex, label=above:$x_2$, cover] (x2) at (1,2) {};
+                        \node[vertex, label=above:$x_3$] (x3) at (2,2) {};
+                        \node[vertex, label=above:$x_4$] (x4) at (3,2) {};
+                        \node[vertex, label=above:$x_5$] (x5) at (4,2) {};
+                        \node[vertex, label=above:$x_6$] (x6) at (5,2) {};
+                        \node[vertex, label=above:$x_7$] (x7) at (6,2) {};
+
+                        \draw[edge]       (x1) to (y1);
+                        \draw[edge]       (x1) to (y3);
+                        \draw[edge]       (x1) to (y4);
+                        \draw[match]      (x1) to (y5);
+
+                        \draw[edge]       (x2) to (y1);
+                        \draw[edge]       (x2) to (y2);
+                        \draw[match]      (x2) to (y3);
+                        \draw[edge]       (x2) to (y5);
+
+                        \draw[edge]       (x3) to (y1);
+                        \draw[edge]       (x3) to (y2);
+                        \draw[match]      (x3) to (y4);
+
+                        \draw[match]      (x4) to (y2);
+                        \draw[edge]       (x4) to (y4);
+
+                        \draw[edge]       (x5) to (y2);
+                        \draw[match]      (x5) to (y6);
+
+                        \draw[match]      (x6) to (y1);
+                        \draw[edge]       (x6) to (y4);
+                        \draw[edge]       (x6) to (y6);
+
+                        \draw[edge]       (x7) to (y1);
+                        \draw[edge]       (x7) to (y4);
+                        \draw[edge]       (x7) to (y6);
+
+                    \end{tikzpicture}
+                    \caption{$M_6 = \left\{ \{x_3, x_4\}, \{x_5, y_6\},
+                    \{x_4, y_2\}, \{x_2, y_3\}, \{x_1, y_5\}, \{x_6, y_1\}
+                    \right\}$ \\ (Überdeckende Knoten weiß gefüllt.)}
+                    \label{fig:b-6}
+                \end{figure}
+
+                \FloatBarrier
+
+                In der 7. Iteration gelingt es nicht, einen augmentierenden Pfad
+                zu finden.
+                Dabei werden die folgenden Knoten mit alternierenden Pfaden
+                erreicht und markiert:
+                $x_7, y_1, y_4, y_6, x_6, x_3, x_5, y_2, y_4$
+
+                \paragraph{Ergebnis:}
+                Der Algorithmus liefert das Matching $M$ in Abb. \ref{fig:b-6}
+                mit $6$ Kanten zusammen mit der minimalen Knotenüberdeckung
+                \begin{equation}
+                    U = \left\{ x_1, x_2, y_1, y_2, y_4, y_6 \right\} \text{ .}
+                \end{equation}
 
         \end{enumerate}
 
