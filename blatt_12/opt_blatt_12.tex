@@ -1,0 +1,164 @@
+\documentclass[a4paper]{scrartcl}
+
+% font/encoding packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[ngerman]{babel}
+
+\usepackage[top=1.1in, bottom=1.5in]{geometry}
+
+\usepackage{amsmath, amssymb, amsfonts, amsthm, mathtools}
+\usepackage{stmaryrd}
+\usepackage{marvosym}
+\setcounter{MaxMatrixCols}{13}
+\allowdisplaybreaks
+\usepackage[output-decimal-marker={,}]{siunitx}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{caption}
+\usepackage{venndiagram}
+\usepackage[shortlabels]{enumitem}
+\usepackage{polynom}
+\polyset{style=C, div=:,vars=x}
+\usepackage[section]{placeins}
+\usepackage{tikz}
+\usetikzlibrary{tikzmark}
+\usetikzlibrary{calc}
+\usetikzlibrary{arrows}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{decorations}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.5.1}
+\usepgfplotslibrary{fillbetween}
+\usepackage{gauss}
+\usepackage{systeme}
+\usepackage{cancel}
+
+\tikzset{
+    declare function={Floor(\x)=round(\x-0.5);}
+}
+
+% Matrizen
+\newdimen\asep 
+\asep=0.25\baselineskip 
+
+\providecommand{\vo}{ 
+    \text{\raisebox{-\asep}[0pt][0pt]{\rule[0pt]{0.8pt}{3.5\asep}}}} 
+\providecommand{\vu}{ 
+    \text{\raisebox{-0.5\asep}[0pt][0pt]{\rule[0pt]{0.8pt}{\baselineskip}}}} 
+\providecommand{\vm}{ 
+    \text{\raisebox{-\asep}[0pt][0pt]{\rule[0pt]{0.8pt}{\baselineskip}}}}
+
+\newtheorem*{behaupt}{Behauptung}
+
+\newcommand{\fallfac}[2]{{#1}^{\underline{#2}}}
+
+\newcommand{\risefac}[2]{{#1}^{\overline{#2}}}
+
+\newcommand{\dif}{\mathop{}\!\mathrm{d}}
+
+\newcommand{\linf}[1]{\lim_{#1 \to \infty}}
+\newcommand{\gdw}{\Leftrightarrow}
+
+\DeclareSIUnit\calorie{cal}
+
+\renewcommand{\arraystretch}{1.3}
+
+\title{Optimierung}
+\subtitle{Blatt 12 Hausaufgaben}
+\author{
+	Lennart Braun (6523742, Gruppe 6) \\
+    Alexander Timmermann (6524072, Gruppe 5)
+}
+\date{zum 19. Januar 2015}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}[label=\bfseries\arabic*.]
+    \item
+        \begin{enumerate}
+            \item \hfill \\
+                \begin{table}[h]
+                    \centering
+                    \begin{tabular}{c||c|c|c|c|c|c|c|c||l}
+                        & $s$ & $a$ & $b$ & $c$ & $d$ & $e$ & $f$ & $g$ & $S$
+                        \\ \hline \hline
+                        0 & $\underline{0}$ & $1$ $s$ & $\infty$ & $\infty$ & $4$ $s$ & $8$ $s$ & $\infty$ & $\infty$ & $\{ s \}$
+                        \\ \hline
+                        1 & $\underline{0}$ & $\underline{1}$ $s$ & $3$ $a$ & $\infty$ & $4$ $s$ & $7$ $a$ & $7$ $a$ & $\infty$ & $\{ s, a \}$
+                        \\ \hline
+                        2 & $\underline{0}$ & $\underline{1}$ $s$ & $\underline{3}$ $a$ & $4$ $b$ & $4$ $s$ & $7$ $a$ & $5$ $b$ & $\infty$ & $\{ s, a, b \}$
+                        \\ \hline
+                        3 & $\underline{0}$ & $\underline{1}$ $s$ & $\underline{3}$ $a$ & $\underline{4}$ $b$ & $4$ $s$ & $7$ $a$ & $5$ $b$ & $8$ $c$ & $\{ s, a, b, c \}$
+                        \\ \hline
+                        4 & $\underline{0}$ & $\underline{1}$ $s$ & $\underline{3}$ $a$ & $\underline{4}$ $b$ & $\underline{4}$ $s$ & $7$ $a$ & $5$ $b$ & $8$ $c$ & $\{ s, a, b, c, d \}$
+                        \\ \hline
+                        5 & $\underline{0}$ & $\underline{1}$ $s$ & $\underline{3}$ $a$ & $\underline{4}$ $b$ & $\underline{4}$ $s$ & $7$ $a$ & $\underline{5}$ $b$ & $8$ $c$ & $\{ s, a, b, c, d, f \}$
+                        \\ \hline
+                        6 & $\underline{0}$ & $\underline{1}$ $s$ & $\underline{3}$ $a$ & $\underline{4}$ $b$ & $\underline{4}$ $s$ & $\underline{6}$ $f$ & $\underline{5}$ $b$ & $6$ $f$ & $\{ s, a, b, c, d, f, e \}$
+                        \\ \hline
+                        6 & $\underline{0}$ & $\underline{1}$ $s$ & $\underline{3}$ $a$ & $\underline{4}$ $b$ & $\underline{4}$ $s$ & $\underline{6}$ $f$ & $\underline{5}$ $b$ & $\underline{6}$ $f$ & $\{ s, a, b, c, d, f, e, g \}$
+                    \end{tabular}
+                    \caption{Ausführung von Dijkstras Algorithmus auf $G$}
+                    \label{tab:dijkstra}
+                \end{table}
+                \begin{figure}[h]
+                    \centering
+                    \begin{tikzpicture}[
+                            auto,
+                            scale=2.5,
+                        ]
+                        \tikzstyle{vertex}=[
+                            circle,
+                            fill,
+                        ]
+                        \tikzstyle{edge}=[
+                            ->,
+                            >=stealth',
+                        ]
+                        \node [vertex, label=above:$s$] (s) at (0,1) {};
+                        \node [vertex, label=above:$a$] (a) at (1,1) {};
+                        \node [vertex, label=above:$b$] (b) at (2,1) {};
+                        \node [vertex, label=above:$c$] (c) at (3,1) {};
+                        \node [vertex, label=below:$d$] (d) at (0,0) {};
+                        \node [vertex, label=below:$e$] (e) at (1,0) {};
+                        \node [vertex, label=below:$f$] (f) at (2,0) {};
+                        \node [vertex, label=below:$g$] (g) at (3,0) {};
+
+                        \draw [edge] (s) to node {$1$} (a);
+                        \draw [edge] (a) to node {$2$} (b);
+                        \draw [edge] (b) to node {$1$} (c);
+                        \draw [edge] (s) to node {$4$} (d);
+                        \draw [edge] (b) to node {$2$} (f);
+                        \draw [edge] (f) to node {$1$} (e);
+                        \draw [edge] (f) to node {$1$} (g);
+                    \end{tikzpicture}
+                    \caption{kürzeste-Pfade-Baum für $G$ und $s$}
+                    \label{fig:dijkstra}
+                \end{figure}
+
+            \item
+
+        \end{enumerate}
+
+    \item
+        \begin{enumerate}
+            \item
+
+            \item
+                \begin{enumerate}[(i)]
+                    \item
+
+                    \item
+
+                    \item
+
+                \end{enumerate}
+
+        \end{enumerate}
+
+\end{enumerate}
+
+\end{document}
