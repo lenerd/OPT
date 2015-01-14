@@ -147,7 +147,178 @@
     \item
         \begin{enumerate}
             \item
-                TODO
+                Währen der Ausführung von Kruskals Algorithmus werden folgende
+                Kanten zum MST hinzugefügt.
+                \begin{enumerate}[(i)]
+                    \item
+                        $\{a,e\}$, $\{d,h\}$ und $\{e,f\}$ in beliebiger
+                        Reihenfolge
+
+                    \item
+                        entweder $\{b,e\}$ oder $\{b,f\}$
+
+                    \item
+                        $\{f,g\}$ und $\{g,h\}$ in beliebiger Reihenfolge
+
+                    \item
+                        entweder $\{c,d\}$ oder $\{c,g\}$
+
+                \end{enumerate}
+
+                Dabei können die MSTs in den Abbildungen \ref{fig:mst-1} bis
+                \ref{fig:mst-4} entstehen.
+                \begin{figure}[h]
+                    \centering
+                    \begin{tikzpicture}[
+                            auto,
+                            scale=2.5,
+                        ]
+                        \tikzstyle{vertex}=[
+                            circle,
+                            fill,
+                        ]
+                        \tikzstyle{edge}=[
+                        ]
+                        \node [vertex, label=above:$a$] (a) at (0,1) {};
+                        \node [vertex, label=above:$b$] (b) at (1,1) {};
+                        \node [vertex, label=above:$c$] (c) at (2,1) {};
+                        \node [vertex, label=above:$d$] (d) at (3,1) {};
+                        \node [vertex, label=below:$e$] (e) at (0,0) {};
+                        \node [vertex, label=below:$f$] (f) at (1,0) {};
+                        \node [vertex, label=below:$g$] (g) at (2,0) {};
+                        \node [vertex, label=below:$h$] (h) at (3,0) {};
+
+                        % \draw [edge] (a) to node {$6$} (b);
+                        \draw [edge] (a) to node {$1$} (e);
+                        % \draw [edge] (b) to node {$5$} (c);
+                        \draw [edge] (b) to node {$2$} (e);
+                        % \draw [edge] (b) to node {$2$} (f);
+                        \draw [edge] (c) to node {$4$} (d);
+                        % \draw [edge] (c) to node {$5$} (f);
+                        % \draw [edge] (c) to node {$4$} (g);
+                        % \draw [edge] (d) to node {$4$} (g);
+                        \draw [edge] (d) to node {$1$} (h);
+                        \draw [edge] (e) to node {$1$} (f);
+                        \draw [edge] (f) to node {$3$} (g);
+                        \draw [edge] (g) to node {$3$} (h);
+                    \end{tikzpicture}
+                    \caption{Ein möglicher MST des angegebenen Graphen}
+                    \label{fig:mst-1}
+                \end{figure}
+                \begin{figure}[h]
+                    \centering
+                    \begin{tikzpicture}[
+                            auto,
+                            scale=2.5,
+                        ]
+                        \tikzstyle{vertex}=[
+                            circle,
+                            fill,
+                        ]
+                        \tikzstyle{edge}=[
+                        ]
+                        \node [vertex, label=above:$a$] (a) at (0,1) {};
+                        \node [vertex, label=above:$b$] (b) at (1,1) {};
+                        \node [vertex, label=above:$c$] (c) at (2,1) {};
+                        \node [vertex, label=above:$d$] (d) at (3,1) {};
+                        \node [vertex, label=below:$e$] (e) at (0,0) {};
+                        \node [vertex, label=below:$f$] (f) at (1,0) {};
+                        \node [vertex, label=below:$g$] (g) at (2,0) {};
+                        \node [vertex, label=below:$h$] (h) at (3,0) {};
+
+                        % \draw [edge] (a) to node {$6$} (b);
+                        \draw [edge] (a) to node {$1$} (e);
+                        % \draw [edge] (b) to node {$5$} (c);
+                        \draw [edge] (b) to node {$2$} (e);
+                        % \draw [edge] (b) to node {$2$} (f);
+                        % \draw [edge] (c) to node {$4$} (d);
+                        % \draw [edge] (c) to node {$5$} (f);
+                        \draw [edge] (c) to node {$4$} (g);
+                        % \draw [edge] (d) to node {$4$} (g);
+                        \draw [edge] (d) to node {$1$} (h);
+                        \draw [edge] (e) to node {$1$} (f);
+                        \draw [edge] (f) to node {$3$} (g);
+                        \draw [edge] (g) to node {$3$} (h);
+                    \end{tikzpicture}
+                    \caption{Ein möglicher MST des angegebenen Graphen}
+                    \label{fig:mst-2}
+                \end{figure}
+                \begin{figure}[h]
+                    \centering
+                    \begin{tikzpicture}[
+                            auto,
+                            scale=2.5,
+                        ]
+                        \tikzstyle{vertex}=[
+                            circle,
+                            fill,
+                        ]
+                        \tikzstyle{edge}=[
+                        ]
+                        \node [vertex, label=above:$a$] (a) at (0,1) {};
+                        \node [vertex, label=above:$b$] (b) at (1,1) {};
+                        \node [vertex, label=above:$c$] (c) at (2,1) {};
+                        \node [vertex, label=above:$d$] (d) at (3,1) {};
+                        \node [vertex, label=below:$e$] (e) at (0,0) {};
+                        \node [vertex, label=below:$f$] (f) at (1,0) {};
+                        \node [vertex, label=below:$g$] (g) at (2,0) {};
+                        \node [vertex, label=below:$h$] (h) at (3,0) {};
+
+                        % \draw [edge] (a) to node {$6$} (b);
+                        \draw [edge] (a) to node {$1$} (e);
+                        % \draw [edge] (b) to node {$5$} (c);
+                        % \draw [edge] (b) to node {$2$} (e);
+                        \draw [edge] (b) to node {$2$} (f);
+                        \draw [edge] (c) to node {$4$} (d);
+                        % \draw [edge] (c) to node {$5$} (f);
+                        % \draw [edge] (c) to node {$4$} (g);
+                        % \draw [edge] (d) to node {$4$} (g);
+                        \draw [edge] (d) to node {$1$} (h);
+                        \draw [edge] (e) to node {$1$} (f);
+                        \draw [edge] (f) to node {$3$} (g);
+                        \draw [edge] (g) to node {$3$} (h);
+                    \end{tikzpicture}
+                    \caption{Ein möglicher MST des angegebenen Graphen}
+                    \label{fig:mst-3}
+                \end{figure}
+                \begin{figure}[h]
+                    \centering
+                    \begin{tikzpicture}[
+                            auto,
+                            scale=2.5,
+                        ]
+                        \tikzstyle{vertex}=[
+                            circle,
+                            fill,
+                        ]
+                        \tikzstyle{edge}=[
+                        ]
+                        \node [vertex, label=above:$a$] (a) at (0,1) {};
+                        \node [vertex, label=above:$b$] (b) at (1,1) {};
+                        \node [vertex, label=above:$c$] (c) at (2,1) {};
+                        \node [vertex, label=above:$d$] (d) at (3,1) {};
+                        \node [vertex, label=below:$e$] (e) at (0,0) {};
+                        \node [vertex, label=below:$f$] (f) at (1,0) {};
+                        \node [vertex, label=below:$g$] (g) at (2,0) {};
+                        \node [vertex, label=below:$h$] (h) at (3,0) {};
+
+                        % \draw [edge] (a) to node {$6$} (b);
+                        \draw [edge] (a) to node {$1$} (e);
+                        % \draw [edge] (b) to node {$5$} (c);
+                        % \draw [edge] (b) to node {$2$} (e);
+                        \draw [edge] (b) to node {$2$} (f);
+                        % \draw [edge] (c) to node {$4$} (d);
+                        % \draw [edge] (c) to node {$5$} (f);
+                        \draw [edge] (c) to node {$4$} (g);
+                        % \draw [edge] (d) to node {$4$} (g);
+                        \draw [edge] (d) to node {$1$} (h);
+                        \draw [edge] (e) to node {$1$} (f);
+                        \draw [edge] (f) to node {$3$} (g);
+                        \draw [edge] (g) to node {$3$} (h);
+                    \end{tikzpicture}
+                    \caption{Ein möglicher MST des angegebenen Graphen}
+                    \label{fig:mst-4}
+                \end{figure}
 
             \item
                 \begin{enumerate}[(i)]
