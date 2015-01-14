@@ -140,22 +140,106 @@
                 \end{figure}
 
             \item
+                TODO: Gegenbeispiel
 
         \end{enumerate}
 
     \item
         \begin{enumerate}
             \item
+                TODO
 
             \item
                 \begin{enumerate}[(i)]
-                    \item
+                    \item Algorithmus von Prim (mit Startknoten $a$) \\
+                        Reihenfolge der hinzugefügten Kanten
+                        \begin{equation}
+                            \{ a, j \},
+                            \{ i, j \},
+                            \{ h, i \},
+                            \{ b, h \},
+                            \{ g, h \},
+                            \{ c, h \},
+                            \{ c, d \},
+                            \{ d, e \},
+                            \{ e, f \}
+                        \end{equation}
 
-                    \item
+                    \item Algorithmus von Kruskal \\
+                        Reihenfolge der hinzugefügten Kanten
+                        \begin{equation}
+                            \{ b, h \},
+                            \{ d, e \},
+                            \{ g, h \},
+                            \{ h, i \},
+                            \{ a, j \},
+                            \{ c, d \},
+                            \{ c, h \},
+                            \{ i, j \},
+                            \{ e, f \}
+                        \end{equation}
 
-                    \item
+                    \item Reverse-Delete-Algorithmus \\
+                        Reihenfolge der entfernen Kanten
+                        \begin{equation}
+                            \{ e, g \},
+                            \{ d, g \},
+                            \{ d, h \},
+                            \{ f, g \},
+                            \{ b, i \},
+                            \{ a, b \},
+                            \{ a, i \},
+                            \{ b, c \}
+                        \end{equation}
 
                 \end{enumerate}
+
+                Die Ausführung der Algorithmen führt in diesem Fall jeweils zu
+                dem MST in Abbildung \ref{fig:mst}.
+                \begin{figure}[h]
+                    \centering
+                    \begin{tikzpicture}[
+                            auto,
+                            scale=2.5,
+                        ]
+                        \tikzstyle{vertex}=[
+                            circle,
+                            fill,
+                        ]
+                        \tikzstyle{edge}=[
+                        ]
+                        \node [vertex, label=above:$a$] (a) at (4,1) {};
+                        \node [vertex, label=above:$b$] (b) at (3,1) {};
+                        \node [vertex, label=above:$c$] (c) at (2,1) {};
+                        \node [vertex, label=above:$d$] (d) at (1,1) {};
+                        \node [vertex, label=above:$e$] (e) at (0,1) {};
+                        \node [vertex, label=below:$j$] (j) at (4,0) {};
+                        \node [vertex, label=below:$i$] (i) at (3,0) {};
+                        \node [vertex, label=below:$h$] (h) at (2,0) {};
+                        \node [vertex, label=below:$g$] (g) at (1,0) {};
+                        \node [vertex, label=below:$f$] (f) at (0,0) {};
+
+                        % \draw [edge] (a) to node {$3$} (b);
+                        % \draw [edge] (a) to node {$3$} (i);
+                        \draw [edge] (a) to node {$2$} (j);
+                        % \draw [edge] (b) to node {$3$} (c);
+                        \draw [edge] (b) to node {$1$} (h);
+                        % \draw [edge] (b) to node {$4$} (i);
+                        \draw [edge] (c) to node {$2$} (d);
+                        \draw [edge] (c) to node {$2$} (h);
+                        \draw [edge] (d) to node {$1$} (e);
+                        % \draw [edge] (d) to node {$6$} (g);
+                        % \draw [edge] (d) to node {$6$} (h);
+                        \draw [edge] (e) to node {$4$} (f);
+                        % \draw [edge] (e) to node {$8$} (g);
+                        % \draw [edge] (f) to node {$5$} (g);
+                        \draw [edge] (g) to node {$1$} (h);
+                        \draw [edge] (h) to node {$1$} (i);
+                        \draw [edge] (i) to node {$2$} (j);
+                    \end{tikzpicture}
+                    \caption{MST von $G$}
+                    \label{fig:mst}
+                \end{figure}
 
         \end{enumerate}
 
