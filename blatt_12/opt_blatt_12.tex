@@ -140,7 +140,28 @@
                 \end{figure}
 
             \item
-                TODO: Gegenbeispiel
+                Es reicht ein Gegenbeispiel, um zu zeigen, dass die angegebene
+                Strategie nicht immer die optimale Lösung liefert.
+                
+                Sei ein Rucksack mit einem Volumen von \SI{5}{\litre} gegeben
+                und die Gegenstände in Tabelle \ref{tab:knapsack} stehen zur
+                Verfügung.
+                \begin{table}
+                    \centering
+                    \begin{tabular}{r|rrr}
+                        $i$ & $w_i$ & $v_i$ & $\frac{w_i}{v_i}$ \\ \hline
+                        1 & 6 \EUR & \SI{1}{\litre} & 6 $\frac{\text{\EUR}}{\si{\litre}}$ \\
+                        2 & 10 \EUR & \SI{2}{\litre} & 5 $\frac{\text{\EUR}}{\si{\litre}}$ \\
+                        3 & 12 \EUR & \SI{3}{\litre} & 4 $\frac{\text{\EUR}}{\si{\litre}}$
+                    \end{tabular}
+                    \caption{Verfügbare Gegenstände}
+                    \label{tab:knapsack}
+                \end{table}
+                Nach der Strategie würden die Gegenstände 1 und 2 mit einem Wert
+                von zusammen 16 {\EUR} ausgewählt werden.
+                Allerdings besitzen die Gegenstände 2 und 3 zusammen einen Wert
+                von 22 {\EUR} und passen auch in den Rucksack.
+                Die Strategie liefert also nicht immer ein optimales Ergebnis.
 
         \end{enumerate}
 
