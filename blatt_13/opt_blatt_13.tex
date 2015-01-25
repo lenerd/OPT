@@ -101,8 +101,42 @@
     \item
         \begin{enumerate}
             \item
+                In der sechsten Iteration ändern sich die Werte nicht mehr,
+                es existieren also keine negativen Kreise in dem Graphen.
+                \begin{table}[h]
+                    \centering
+                    \begin{tabular}{r|c|c|c|c|c|c|}
+                          & $s$ & $a$ & $c$ & $c$ & $d$ & $e$ \\ \hline
+                        0 & $0,-$ & $\infty,-$ & $\infty,-$ & $\infty,-$ & $\infty,-$ & $\infty,-$ \\
+                        1 & $0,-$ & $7,s$ & $2,s$ & $\infty,-$ & $\infty,-$ & $\infty,-$ \\
+                        2 & $0,-$ & $6,b$ & $2,s$ & $0,b$ & $3,a$ & $\infty,-$ \\
+                        3 & $0,-$ & $6,b$ & $2,s$ & $0,b$ & $1,c$ & $4,d$ \\
+                        4 & $0,-$ & $6,b$ & $2,s$ & $0,b$ & $1,c$ & $2,d$ \\
+                        5 & $0,-$ & $6,b$ & $2,s$ & $0,b$ & $1,c$ & $2,d$ \\
+                        6 & $0,-$ & $6,b$ & $2,s$ & $0,b$ & $1,c$ & $2,d$ \\
+                    \end{tabular}
+                    \caption{Tabelle zum Algorithmus von Bellman und Ford}
+                    \label{tab:bf1}
+                \end{table}
 
             \item
+                In der sechsten Iteration ändern sich die Werte noch,
+                es existiert also mindestens ein negativer Kreis in dem Graphen.
+                \begin{table}[h]
+                    \centering
+                    \begin{tabular}{r|c|c|c|c|c|c|}
+                          & $s$ & $a$ & $c$ & $c$ & $d$ & $e$ \\ \hline
+                        0 & $0,-$ & $\infty,-$ & $\infty,-$ & $\infty,-$ & $\infty,-$ & $\infty,-$ \\
+                        1 & $0,-$ & $7,s$ & $4,s$ & $\infty,-$ & $\infty,-$ & $\infty,-$ \\
+                        2 & $0,-$ & $6,b$ & $4,s$ & $2,b$ & $3,a$ & $\infty,-$ \\
+                        3 & $0,-$ & $5,c$ & $4,s$ & $2,b$ & $2,a$ & $4,d$ \\
+                        4 & $0,-$ & $5,c$ & $3,d$ & $2,b$ & $1,a$ & $3,d$ \\
+                        5 & $0,-$ & $5,c$ & $2,d$ & $1,b$ & $1,a$ & $2,d$ \\
+                        5 & $0,-$ & $4,b$ & $2,d$ & $0,b$ & $1,a$ & $2,d$ \\
+                    \end{tabular}
+                    \caption{Tabelle zum Algorithmus von Bellman und Ford}
+                    \label{tab:bf2}
+                \end{table}
 
         \end{enumerate}
 
